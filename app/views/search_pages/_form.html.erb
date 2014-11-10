@@ -1,0 +1,39 @@
+<%= form_for(@search_page) do |f| %>
+  <% if @search_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_page.errors.count, "error") %> prohibited this search_page from being saved:</h2>
+
+      <ul>
+      <% @search_page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :publication_date %><br />
+    <%= f.date_select :publication_date %>
+  </div>
+  <div class="field">
+    <%= f.label :SPARK_publication_date %><br />
+    <%= f.date_select :SPARK_publication_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+<% end %>

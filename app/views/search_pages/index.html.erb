@@ -1,0 +1,46 @@
+<h1>Listing search_pages</h1>
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Publication date</th>
+    <th>Spark publication date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @search_pages.each do |search_page| %>
+  <tr>
+    <td><%= search_page.author %></td>
+    <td><%= search_page.title %></td>
+    <td><%= search_page.publication_date %></td>
+    <td><%= search_page.SPARK_publication_date %></td>
+    <td><%= link_to 'Show', search_page %></td>
+    <td><%= link_to 'Edit', edit_search_page_path(search_page) %></td>
+    <td><%= link_to 'Destroy', search_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<!-- search field -->
+
+<%= form_tag search_pages_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <br />
+    <%= submit_tag "Search", :author => nil %>
+  </p>
+<% end %>
+
+
+<%=link_to "Author", "http://localhost:3000/search_pages?utf8=%E2%9C%93&search=A&commit=Search"%>
+
+<!-- <a href="http://localhost:3000/search_pages?utf8=%E2%9C%93&search=A&commit=Search">Author</a> -->
+
+<br />
+
+<%= link_to 'New Search page', new_search_page_path %>
