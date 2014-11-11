@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Proj::Application.load_tasks
+ResearchSharingProject::Application.load_tasks

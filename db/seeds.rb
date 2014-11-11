@@ -5,10 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
-SearchPage.create(author: "A", title: "1")
-SearchPage.create(author: "B", title: "2")
-SearchPage.create(author: "C", title: "3")
-SearchPage.create(author: "D", title: "4")
-SearchPage.create(author: "E", title: "5")

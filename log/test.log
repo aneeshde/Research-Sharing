@@ -1,1332 +1,981 @@
 Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (118.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (84.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
 Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePapers (20141108160646)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[35m (1.0ms)[0m  CREATE TABLE "papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141108160646')[0m
+  [1m[35m (117.8ms)[0m  commit transaction
+Migrating to DeviseCreateAuthors (20141108181015)
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[35m (11.0ms)[0m  CREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "index_authors_on_email" ON "authors" ("email")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_authors_on_reset_password_token" ON "authors" ("reset_password_token")
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141108181015')[0m
+  [1m[35m (89.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
-  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
+Unable to load userquestion, underlying cause No such file to load -- userquestion 
+
+ C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:779:in `each'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:762:in `fixtures'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/test_helper.rb:5:in `<top (required)>'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/functional/page_controller_test.rb:1:in `require'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/functional/page_controller_test.rb:1:in `<top (required)>'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:15:in `require'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:4:in `select'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:4:in `<main>'
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/new_user_path" for 127.0.0.1 at 2014-11-09 08:09:40 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/new_user_path" for 127.0.0.1 at 2014-11-09 08:18:51 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_page" for 127.0.0.1 at 2014-11-09 08:19:45 -0500
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/new_search_path" for 127.0.0.1 at 2014-11-09 08:24:20 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/users/search_page" for 127.0.0.1 at 2014-11-09 08:26:38 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/users/search_page" for 127.0.0.1 at 2014-11-09 08:27:53 -0500
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/users/search_page" for 127.0.0.1 at 2014-11-09 08:30:43 -0500
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/users/search_page" for 127.0.0.1 at 2014-11-09 08:31:27 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/users/search" for 127.0.0.1 at 2014-11-09 08:31:42 -0500
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/users/searchpage" for 127.0.0.1 at 2014-11-09 08:31:51 -0500
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/new_searchpages_path" for 127.0.0.1 at 2014-11-09 08:36:06 -0500
-  [1m[35m (0.0ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_path" for 127.0.0.1 at 2014-11-09 08:42:25 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_page_path" for 127.0.0.1 at 2014-11-09 08:44:31 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/searchPage_path" for 127.0.0.1 at 2014-11-09 08:50:31 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/new_path" for 127.0.0.1 at 2014-11-09 08:50:43 -0500
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:15:59 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 27.8ms (Views: 15.1ms | ActiveRecord: 0.9ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[36m (12.0ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
-  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:15:59 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 2.6ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:37:03', '2014-11-09 18:37:03', 298486374)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Unable to load userquestion, underlying cause No such file to load -- userquestion 
+
+ C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:779:in `each'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:762:in `fixtures'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/test_helper.rb:5:in `<top (required)>'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/functional/page_controller_test.rb:1:in `require'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/functional/page_controller_test.rb:1:in `<top (required)>'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:15:in `require'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:4:in `select'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:4:in `<main>'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[35m (4.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[36m (5.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)
+  [1m[36mFixture Insert (1.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[35m (4.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 980190962)[0m
+  [1m[35mFixture Insert (1.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:40:33', '2014-11-09 18:40:33', 298486374)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Unable to load userquestion, underlying cause No such file to load -- userquestion 
+
+ C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:312:in `depend_on'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activesupport-3.2.19/lib/active_support/dependencies.rb:225:in `require_dependency'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:779:in `each'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/activerecord-3.2.19/lib/active_record/fixtures.rb:762:in `fixtures'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/test_helper.rb:10:in `<class:TestCase>'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/test_helper.rb:5:in `<top (required)>'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/functional/page_controller_test.rb:1:in `require'
+C:/Users/Mona/RubymineProjects/Research sharing Project/test/functional/page_controller_test.rb:1:in `<top (required)>'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:15:in `require'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:15:in `block in <main>'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:4:in `select'
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rake-10.3.2/lib/rake/rake_test_loader.rb:4:in `<main>'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM "authors"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)[0m
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "authors"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+SQLite3::ConstraintException: UNIQUE constraint failed: authors.email: INSERT INTO "authors" ("created_at", "updated_at", "id") VALUES ('2014-11-09 18:42:02', '2014-11-09 18:42:02', 298486374)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:16:19 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 17.3ms (Views: 7.0ms | ActiveRecord: 0.7ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:16:19 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.2ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (0.2ms)
-Completed 200 OK in 2.0ms (Views: 1.3ms | ActiveRecord: 0.2ms)
   [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:21:05 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 27.8ms (Views: 15.9ms | ActiveRecord: 0.9ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:21:05 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (0.2ms)
-Completed 200 OK in 2.2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:26:57 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (1.4ms)
-Completed 200 OK in 28.5ms (Views: 16.8ms | ActiveRecord: 0.9ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 09:26:57 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (0.2ms)
-Completed 200 OK in 2.1ms (Views: 1.4ms | ActiveRecord: 0.1ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 09:27:44 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (8.8ms)
-  Rendered search_pages/new.html.erb within layouts/application (11.1ms)
-Completed 200 OK in 38.8ms (Views: 16.8ms | ActiveRecord: 0.7ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 09:27:44 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (9.9ms)
-  Rendered search_pages/new.html.erb within layouts/application (10.4ms)
-Completed 200 OK in 13.6ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 12:47:15 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1514.1ms)
+Completed 200 OK in 1619.2ms (Views: 1555.1ms | ActiveRecord: 4.0ms)
   [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 09:31:15 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (8.6ms)
-  Rendered search_pages/new.html.erb within layouts/application (11.1ms)
-Completed 200 OK in 39.2ms (Views: 17.8ms | ActiveRecord: 0.7ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 09:31:15 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (9.3ms)
-  Rendered search_pages/new.html.erb within layouts/application (10.4ms)
-Completed 200 OK in 14.0ms (Views: 13.7ms | ActiveRecord: 0.0ms)
-Started POST "/search_pages" for 127.0.0.1 at 2014-11-09 09:31:15 -0500
-Processing by SearchPagesController#create as HTML
-  Parameters: {"utf8"=>"✓", "search_page"=>{"author"=>"Swap", "title"=>"Ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"9", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"9"}, "commit"=>"Create Search page"}
-  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
-  [1m[36mSQL (24.3ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Sun, 09 Nov 2014], ["author", "Swap"], ["created_at", Sun, 09 Nov 2014 14:31:15 UTC +00:00], ["publication_date", Sun, 09 Nov 2014], ["title", "Ruby"], ["updated_at", Sun, 09 Nov 2014 14:31:15 UTC +00:00]]
-  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
-Redirected to http://www.example.com/search_pages/1
-Completed 302 Found in 30.6ms (ActiveRecord: 24.4ms)
-Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-09 09:31:15 -0500
-Processing by SearchPagesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
-  Rendered search_pages/show.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 4.9ms (Views: 2.8ms | ActiveRecord: 0.1ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:12:32 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (10.1ms)
-  Rendered search_pages/new.html.erb within layouts/application (13.2ms)
-Completed 200 OK in 47.8ms (Views: 23.1ms | ActiveRecord: 0.8ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:12:33 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (14.0ms)
-  Rendered search_pages/new.html.erb within layouts/application (14.9ms)
-Completed 200 OK in 18.4ms (Views: 18.1ms | ActiveRecord: 0.0ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:02:16 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1518.1ms)
+Completed 200 OK in 1625.2ms (Views: 1559.1ms | ActiveRecord: 5.0ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:12:45 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (8.2ms)
-  Rendered search_pages/new.html.erb within layouts/application (10.8ms)
-Completed 200 OK in 37.9ms (Views: 16.9ms | ActiveRecord: 0.7ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:12:45 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (10.7ms)
-  Rendered search_pages/new.html.erb within layouts/application (11.6ms)
-Completed 200 OK in 15.5ms (Views: 15.2ms | ActiveRecord: 0.0ms)
-Started POST "/search_pages" for 127.0.0.1 at 2014-11-09 11:12:45 -0500
-Processing by SearchPagesController#create as HTML
-  Parameters: {"utf8"=>"✓", "search_page"=>{"author"=>"Swap", "title"=>"Ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"9", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"9"}, "commit"=>"Create Search page"}
-  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
-  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Sun, 09 Nov 2014], ["author", "Swap"], ["created_at", Sun, 09 Nov 2014 16:12:45 UTC +00:00], ["publication_date", Sun, 09 Nov 2014], ["title", "Ruby"], ["updated_at", Sun, 09 Nov 2014 16:12:45 UTC +00:00]]
-  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
-Redirected to http://www.example.com/search_pages/1
-Completed 302 Found in 5.3ms (ActiveRecord: 2.5ms)
-Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-09 11:12:45 -0500
-Processing by SearchPagesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
-  Rendered search_pages/show.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 4.4ms (Views: 2.5ms | ActiveRecord: 0.1ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:04:52 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1608.2ms)
+Completed 200 OK in 1735.3ms (Views: 1656.2ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:13:58 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (9.5ms)
-  Rendered search_pages/new.html.erb within layouts/application (12.8ms)
-Completed 200 OK in 45.3ms (Views: 19.9ms | ActiveRecord: 1.0ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:13:58 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (3.9ms)
-  Rendered search_pages/new.html.erb within layouts/application (4.8ms)
-Completed 200 OK in 15.8ms (Views: 8.8ms | ActiveRecord: 0.0ms)
-Started POST "/search_pages" for 127.0.0.1 at 2014-11-09 11:13:58 -0500
-Processing by SearchPagesController#create as HTML
-  Parameters: {"utf8"=>"✓", "search_page"=>{"author"=>"Swap", "title"=>"Ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"9", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"9"}, "commit"=>"Create Search page"}
-  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
-  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Sun, 09 Nov 2014], ["author", "Swap"], ["created_at", Sun, 09 Nov 2014 16:13:58 UTC +00:00], ["publication_date", Sun, 09 Nov 2014], ["title", "Ruby"], ["updated_at", Sun, 09 Nov 2014 16:13:58 UTC +00:00]]
-  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
-Redirected to http://www.example.com/search_pages/1
-Completed 302 Found in 11.2ms (ActiveRecord: 5.6ms)
-Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-09 11:13:58 -0500
-Processing by SearchPagesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
-  Rendered search_pages/show.html.erb within layouts/application (3.1ms)
-Completed 200 OK in 15.5ms (Views: 6.6ms | ActiveRecord: 0.1ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:07:00 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1544.1ms)
+Completed 200 OK in 1652.2ms (Views: 1586.1ms | ActiveRecord: 4.0ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:14:14 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (8.8ms)
-  Rendered search_pages/new.html.erb within layouts/application (11.4ms)
-Completed 200 OK in 30.5ms (Views: 17.0ms | ActiveRecord: 0.7ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:14:14 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (14.2ms)
-  Rendered search_pages/new.html.erb within layouts/application (15.6ms)
-Completed 200 OK in 18.1ms (Views: 17.7ms | ActiveRecord: 0.0ms)
-Started POST "/search_pages" for 127.0.0.1 at 2014-11-09 11:14:14 -0500
-Processing by SearchPagesController#create as HTML
-  Parameters: {"utf8"=>"✓", "search_page"=>{"author"=>"Swap", "title"=>"Ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"9", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"9"}, "commit"=>"Create Search page"}
-  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
-  [1m[36mSQL (59.3ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Sun, 09 Nov 2014], ["author", "Swap"], ["created_at", Sun, 09 Nov 2014 16:14:14 UTC +00:00], ["publication_date", Sun, 09 Nov 2014], ["title", "Ruby"], ["updated_at", Sun, 09 Nov 2014 16:14:14 UTC +00:00]]
-  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
-Redirected to http://www.example.com/search_pages/1
-Completed 302 Found in 72.5ms (ActiveRecord: 59.4ms)
-Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-09 11:14:14 -0500
-Processing by SearchPagesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
-  Rendered search_pages/show.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 11.6ms (Views: 3.2ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:07:55 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1536.1ms)
+Completed 200 OK in 1654.2ms (Views: 1588.1ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:15:03 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (8.7ms)
-  Rendered search_pages/new.html.erb within layouts/application (11.3ms)
-Completed 200 OK in 127.2ms (Views: 17.5ms | ActiveRecord: 87.8ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:15:04 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (14.4ms)
-  Rendered search_pages/new.html.erb within layouts/application (15.4ms)
-Completed 200 OK in 17.3ms (Views: 17.1ms | ActiveRecord: 0.0ms)
-Started POST "/search_pages" for 127.0.0.1 at 2014-11-09 11:15:04 -0500
-Processing by SearchPagesController#create as HTML
-  Parameters: {"utf8"=>"✓", "search_page"=>{"author"=>"Swap", "title"=>"Ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"9", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"9"}, "commit"=>"Create Search page"}
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:11:43 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1546.1ms)
+Completed 200 OK in 1655.2ms (Views: 1589.1ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:14:45 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1549.1ms)
+Completed 200 OK in 1658.2ms (Views: 1592.1ms | ActiveRecord: 5.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:14:47 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 6.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:20:02 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1527.1ms)
+Completed 200 OK in 1636.1ms (Views: 1570.1ms | ActiveRecord: 5.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:20:04 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 0.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:20:04 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:20:04 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 3.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:31:49 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1527.1ms)
+Completed 200 OK in 1634.2ms (Views: 1568.1ms | ActiveRecord: 4.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:31:51 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:31:51 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 3.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:31:51 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:31:51 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (18.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:42:00 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2197.1ms)
+Completed 200 OK in 2641.7ms (Views: 2379.0ms | ActiveRecord: 9.9ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:42:03 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:42:03 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:42:03 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 3.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:42:03 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:42:03 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"aneeshde@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 130.1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"aneeshde@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:48:39 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1522.1ms)
+Completed 200 OK in 1628.2ms (Views: 1563.1ms | ActiveRecord: 4.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:48:40 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 0.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:48:40 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:48:40 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 0.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:48:40 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 5.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-09 13:48:41 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"aneeshde@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 38.0ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"aneeshde@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:04:46 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1507.1ms)
+Completed 200 OK in 1622.2ms (Views: 1550.1ms | ActiveRecord: 5.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:04:48 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:04:48 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:04:48 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
-  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Sun, 09 Nov 2014], ["author", "Swap"], ["created_at", Sun, 09 Nov 2014 16:15:04 UTC +00:00], ["publication_date", Sun, 09 Nov 2014], ["title", "Ruby"], ["updated_at", Sun, 09 Nov 2014 16:15:04 UTC +00:00]]
-  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
-Redirected to http://www.example.com/search_pages/1
-Completed 302 Found in 5.7ms (ActiveRecord: 2.6ms)
-Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-09 11:15:04 -0500
-Processing by SearchPagesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
-  Rendered search_pages/show.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 4.3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
-Started GET "/search_pages/search_pages/1" for 127.0.0.1 at 2014-11-09 11:15:04 -0500
-  [1m[35m (0.5ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:15:26 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (8.4ms)
-  Rendered search_pages/new.html.erb within layouts/application (10.8ms)
-Completed 200 OK in 37.0ms (Views: 16.6ms | ActiveRecord: 0.6ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  commit transaction
-  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-09 11:15:26 -0500
-Processing by SearchPagesController#new as HTML
-  Rendered search_pages/_form.html.erb (10.0ms)
-  Rendered search_pages/new.html.erb within layouts/application (11.1ms)
-Completed 200 OK in 14.8ms (Views: 14.4ms | ActiveRecord: 0.0ms)
-Started POST "/search_pages" for 127.0.0.1 at 2014-11-09 11:15:26 -0500
-Processing by SearchPagesController#create as HTML
-  Parameters: {"utf8"=>"✓", "search_page"=>{"author"=>"Swap", "title"=>"Ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"9", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"9"}, "commit"=>"Create Search page"}
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:04:48 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$bWPHVeGeDriZ7BDEbbjqEuQzAHCbMRc4qWfAySsBEBYJONNGn/SjG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:04:48 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
-  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Sun, 09 Nov 2014], ["author", "Swap"], ["created_at", Sun, 09 Nov 2014 16:15:26 UTC +00:00], ["publication_date", Sun, 09 Nov 2014], ["title", "Ruby"], ["updated_at", Sun, 09 Nov 2014 16:15:26 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:04:48.165375', "current_sign_in_at" = '2014-11-09 20:04:48.165375', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:04:48.165375' WHERE "authors"."id" = 1[0m
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
-Redirected to http://www.example.com/search_pages/1
-Completed 302 Found in 4.9ms (ActiveRecord: 2.3ms)
-Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-09 11:15:26 -0500
-Processing by SearchPagesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "1"]]
-  Rendered search_pages/show.html.erb within layouts/application (0.9ms)
-Completed 200 OK in 4.8ms (Views: 2.7ms | ActiveRecord: 0.1ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://www.example.com/
+Completed 302 Found in 71.1ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:04:48 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 17.0ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
 Connecting to database specified by database.yml
-  [1m[36m (6.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.3ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:35:06 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.1ms)
-Completed 200 OK in 112.0ms (Views: 53.8ms | ActiveRecord: 3.6ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:35:07 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 10.3ms (Views: 7.6ms | ActiveRecord: 0.6ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (9.7ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:35:45 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (8.4ms)
-Completed 200 OK in 91.8ms (Views: 51.5ms | ActiveRecord: 2.8ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (1.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:35:45 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 8.8ms (Views: 6.5ms | ActiveRecord: 0.5ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (3.8ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:36:18 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (8.0ms)
-Completed 200 OK in 92.9ms (Views: 52.5ms | ActiveRecord: 2.8ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:36:18 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 8.9ms (Views: 6.5ms | ActiveRecord: 0.6ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (10.6ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:36:35 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.9ms)
-Completed 200 OK in 98.3ms (Views: 54.9ms | ActiveRecord: 3.0ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.4ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:36:35 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 9.0ms (Views: 6.7ms | ActiveRecord: 0.6ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (6.6ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:37:20 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.6ms)
-Completed 200 OK in 94.0ms (Views: 50.4ms | ActiveRecord: 2.7ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:37:21 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.4ms)
-Completed 200 OK in 13.9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 15:37:21 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (13.1ms)
-Completed 200 OK in 19.1ms (Views: 17.6ms | ActiveRecord: 0.4ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-Connecting to database specified by database.yml
-  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:41:14 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.3ms)
-Completed 200 OK in 103.9ms (Views: 55.2ms | ActiveRecord: 4.5ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:41:15 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 9.0ms (Views: 6.6ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 15:41:15 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (4.9ms)
-Completed 200 OK in 10.2ms (Views: 9.0ms | ActiveRecord: 0.3ms)
-  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
-Connecting to database specified by database.yml
-  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (2.2ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:41:43 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (4.9ms)
-Completed 200 OK in 69.4ms (Views: 35.2ms | ActiveRecord: 2.3ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:41:43 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 9.2ms (Views: 5.1ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 15:41:43 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 17.7ms (Views: 16.5ms | ActiveRecord: 0.3ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-Connecting to database specified by database.yml
-  [1m[36m (6.6ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:42:23 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.1ms)
-Completed 200 OK in 98.7ms (Views: 53.6ms | ActiveRecord: 2.9ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:42:23 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (3.3ms)
-Completed 200 OK in 10.7ms (Views: 8.4ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 15:42:23 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (5.4ms)
-Completed 200 OK in 11.5ms (Views: 10.1ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 15:42:23 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (9.9ms)
-Completed 200 OK in 16.5ms (Views: 15.0ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:43:18 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (8.0ms)
-Completed 200 OK in 105.7ms (Views: 59.2ms | ActiveRecord: 3.1ms)
-  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:43:18 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 20.7ms (Views: 18.3ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 15:43:18 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (4.1ms)
-Completed 200 OK in 9.2ms (Views: 7.8ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 15:43:18 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (2.8ms)
-Completed 200 OK in 13.7ms (Views: 12.6ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (4.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.2ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:45:33 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.7ms)
-Completed 200 OK in 75.0ms (Views: 31.7ms | ActiveRecord: 3.0ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 15:45:34 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.9ms)
-Completed 200 OK in 10.4ms (Views: 8.0ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 15:45:34 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 8.4ms (Views: 7.2ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 15:45:34 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (2.7ms)
-Completed 200 OK in 9.5ms (Views: 8.5ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (2.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-  [1m[36m (2.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (3.6ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (2.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:36:46 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (10.4ms)
-Completed 200 OK in 115.0ms (Views: 61.5ms | ActiveRecord: 3.0ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:36:46 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 9.2ms (Views: 6.8ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:36:47 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 10.1ms (Views: 8.9ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:36:47 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 15.4ms (Views: 14.3ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:37:13 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (6.9ms)
-Completed 200 OK in 98.6ms (Views: 57.6ms | ActiveRecord: 3.2ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:37:13 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 8.4ms (Views: 6.2ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:37:13 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (4.5ms)
-Completed 200 OK in 9.7ms (Views: 8.3ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:37:13 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 15.4ms (Views: 14.4ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:44:25 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (6.2ms)
-Completed 200 OK in 78.3ms (Views: 42.1ms | ActiveRecord: 2.6ms)
-  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.3ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:44:25 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 8.8ms (Views: 6.0ms | ActiveRecord: 0.6ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:44:25 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 8.9ms (Views: 7.6ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:44:25 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (2.5ms)
-Completed 200 OK in 9.0ms (Views: 8.0ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (2.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:45:44 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.9ms)
-Completed 200 OK in 94.0ms (Views: 52.7ms | ActiveRecord: 2.7ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:45:45 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 9.4ms (Views: 6.5ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:45:45 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (5.3ms)
-Completed 200 OK in 10.9ms (Views: 9.6ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:45:45 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 18.9ms (Views: 17.7ms | ActiveRecord: 0.4ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:46:08 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (11.9ms)
-Completed 200 OK in 114.7ms (Views: 68.4ms | ActiveRecord: 3.3ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.5ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:46:08 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.4ms)
-Completed 200 OK in 23.9ms (Views: 21.5ms | ActiveRecord: 0.6ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:46:09 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (4.2ms)
-Completed 200 OK in 9.3ms (Views: 7.7ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:46:09 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 13.2ms (Views: 12.4ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (2.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:58:30 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (27.0ms)
-Completed 200 OK in 98.8ms (Views: 51.1ms | ActiveRecord: 2.9ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:58:30 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.5ms)
-Completed 200 OK in 10.6ms (Views: 8.1ms | ActiveRecord: 0.6ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:58:30 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (4.5ms)
-Completed 200 OK in 9.7ms (Views: 8.5ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:58:30 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 14.4ms (Views: 13.4ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.2ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:58:59 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.5ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.2ms)
-Completed 200 OK in 98.8ms (Views: 55.4ms | ActiveRecord: 3.1ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:58:59 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (3.8ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.3ms)
-Completed 200 OK in 13.5ms (Views: 7.7ms | ActiveRecord: 3.8ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:58:59 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')
-  Rendered search_pages/index.html.erb within layouts/application (5.1ms)
-Completed 200 OK in 10.5ms (Views: 9.0ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:00 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.5ms)
-Completed 200 OK in 15.2ms (Views: 14.0ms | ActiveRecord: 0.4ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (3.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:59:22 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (8.0ms)
-Completed 200 OK in 93.3ms (Views: 51.7ms | ActiveRecord: 2.8ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:22 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (12.0ms)
-Completed 200 OK in 25.8ms (Views: 24.1ms | ActiveRecord: 0.5ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:59:22 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.5ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (2.2ms)
-Completed 200 OK in 9.9ms (Views: 7.1ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:22 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[36mSearchPage Load (7.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (11.2ms)
-Completed 200 OK in 17.6ms (Views: 9.0ms | ActiveRecord: 7.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:23 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 7.7ms (Views: 6.8ms | ActiveRecord: 0.3ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-Connecting to database specified by database.yml
-  [1m[36m (1.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:59:47 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (8.1ms)
-Completed 200 OK in 96.2ms (Views: 53.7ms | ActiveRecord: 3.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:47 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (15.5ms)
-Completed 200 OK in 27.5ms (Views: 25.8ms | ActiveRecord: 0.4ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 16:59:47 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.5ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 15.3ms (Views: 8.2ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Swap&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:48 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Swap", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Swap%' OR author LIKE '%Swap%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.4ms)
-Completed 200 OK in 24.5ms (Views: 22.6ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 16:59:48 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (3.2ms)
-Completed 200 OK in 8.4ms (Views: 7.4ms | ActiveRecord: 0.3ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-Connecting to database specified by database.yml
-  [1m[36m (2.8ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:06:41 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (13.7ms)
-Completed 200 OK in 98.1ms (Views: 56.7ms | ActiveRecord: 2.9ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:06:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (12.9ms)
-Completed 200 OK in 24.7ms (Views: 22.7ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:06:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (3.2ms)
-Completed 200 OK in 8.5ms (Views: 7.4ms | ActiveRecord: 0.4ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:06:42 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 7.6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:06:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (13.0ms)
-Completed 200 OK in 18.9ms (Views: 18.0ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:06:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (13.4ms)
-Completed 200 OK in 18.3ms (Views: 17.5ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (1.2ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:08:44 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (12.2ms)
-Completed 200 OK in 247.7ms (Views: 180.0ms | ActiveRecord: 5.0ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:08:45 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (6.0ms)
-Completed 200 OK in 16.8ms (Views: 11.0ms | ActiveRecord: 0.5ms)
-  [1m[35m (0.3ms)[0m  rollback transaction
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:08:45 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.7ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 18.3ms (Views: 15.0ms | ActiveRecord: 0.7ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:08:45 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (3.3ms)
-Completed 200 OK in 10.0ms (Views: 8.6ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:08:45 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.5ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (13.0ms)
-Completed 200 OK in 25.1ms (Views: 23.8ms | ActiveRecord: 0.5ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-Connecting to database specified by database.yml
-  [1m[36m (1.6ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:09:25 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (8.4ms)
-Completed 200 OK in 93.8ms (Views: 54.5ms | ActiveRecord: 3.1ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:09:25 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (11.8ms)
-Completed 200 OK in 26.6ms (Views: 24.4ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:09:25 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (3.3ms)
-Completed 200 OK in 8.7ms (Views: 7.5ms | ActiveRecord: 0.3ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:09:25 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.3ms)
-Completed 200 OK in 9.9ms (Views: 7.2ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:09:25 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (5.6ms)
-Completed 200 OK in 23.1ms (Views: 21.5ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:09:25 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (1.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (4.3ms)
-Completed 200 OK in 9.4ms (Views: 7.5ms | ActiveRecord: 1.3ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (8.0ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:33:56 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (3.8ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (6.9ms)
-Completed 200 OK in 99.9ms (Views: 53.3ms | ActiveRecord: 6.8ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:33:57 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (13.9ms)
-Completed 200 OK in 26.7ms (Views: 25.1ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:33:57 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (3.2ms)
-Completed 200 OK in 8.5ms (Views: 7.6ms | ActiveRecord: 0.3ms)
-  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
-  [1m[35m (12.4ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:33:57 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 9.8ms (Views: 7.1ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:33:57 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')
-  Rendered search_pages/index.html.erb within layouts/application (7.7ms)
-Completed 200 OK in 21.3ms (Views: 12.9ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-09 17:33:57 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (4.0ms)
-Completed 200 OK in 9.1ms (Views: 8.1ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (2.6ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.1ms)[0m  commit transaction
-  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:34:42 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (5.9ms)
-Completed 200 OK in 77.2ms (Views: 43.4ms | ActiveRecord: 2.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-09 17:34:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.4ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (12.5ms)
-Completed 200 OK in 31.4ms (Views: 20.8ms | ActiveRecord: 0.4ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-09 17:34:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')
-  Rendered search_pages/index.html.erb within layouts/application (2.9ms)
-Completed 200 OK in 7.1ms (Views: 6.1ms | ActiveRecord: 0.4ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-09 17:34:42 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 7.5ms (Views: 5.5ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-09 17:34:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (8.9ms)
-Completed 200 OK in 17.3ms (Views: 16.1ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-09 17:34:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.2ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 6.5ms (Views: 5.6ms | ActiveRecord: 0.2ms)
-  [1m[35m (0.1ms)[0m  rollback transaction
-Connecting to database specified by database.yml
-  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-10 16:48:42 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.9ms)
-Completed 200 OK in 34.0ms (Views: 14.9ms | ActiveRecord: 0.9ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-10 16:48:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (1.4ms)
-Completed 200 OK in 2.8ms (Views: 2.4ms | ActiveRecord: 0.1ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-10 16:48:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')
-  Rendered search_pages/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 5.9ms (Views: 5.5ms | ActiveRecord: 0.1ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:07:16 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1563.1ms)
+Completed 200 OK in 1670.2ms (Views: 1605.1ms | ActiveRecord: 4.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:07:18 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:07:18 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:07:18 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:07:18 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$riYFuxOrhGGrEksmSNBu..tnZkjgLHprDN1TYmd5X5vq/lK95YLmG"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:07:18 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:07:18.548755', "current_sign_in_at" = '2014-11-09 20:07:18.548755', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:07:18.548755' WHERE "authors"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 74.1ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:07:18 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 16.0ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:07:50 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1580.1ms)
+Completed 200 OK in 1692.2ms (Views: 1625.2ms | ActiveRecord: 3.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:07:51 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 8.0ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:07:51 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:07:51 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:07:51 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$w4Hv3gA66ZZksZXYF7JmleBAOSofiCe1jeId/A7NwMAtP0AzN7JCm"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:07:51 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:07:51.892892', "current_sign_in_at" = '2014-11-09 20:07:51.892892', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:07:51.892892' WHERE "authors"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 77.0ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:07:51 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 17.0ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:21:45 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1622.2ms)
+Completed 200 OK in 1733.2ms (Views: 1667.2ms | ActiveRecord: 4.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:21:47 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:21:47 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 11.0ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:21:47 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:21:47 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$r7NNWg8GSYItG9o5vhCsMeT.scG6.YiV9MSMC.f7e8sTKKIsEUUCq"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:21:47 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:21:47.328157', "current_sign_in_at" = '2014-11-09 20:21:47.328157', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:21:47.329161' WHERE "authors"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 51.0ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:21:47 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 40.0ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (15.7ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:22:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1588.1ms)
+Completed 200 OK in 1699.2ms (Views: 1633.2ms | ActiveRecord: 4.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:22:26 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8.0ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:22:26 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:22:26 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:22:26 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$.MiE2F4tKHCuIvVFSmYSL.UeIiNj9a8boCV5hsOFG6wAH/MFVOG2e"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:22:26 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:22:26.779359', "current_sign_in_at" = '2014-11-09 20:22:26.779359', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:22:26.779359' WHERE "authors"."id" = 1[0m
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 50.0ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:22:26 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 39.0ms (Views: 38.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (7.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:32:30 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1574.1ms)
+Completed 200 OK in 1684.2ms (Views: 1616.1ms | ActiveRecord: 3.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:32:32 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9.0ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:32:32 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 7.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:32:32 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:32:32 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$Qrd6TKKn6k034LzaqxDgduJzcg4aT9AuWFMHOQvvB.A.CxyGO07qu"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:32:32 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:32:32.642364', "current_sign_in_at" = '2014-11-09 20:32:32.642364', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:32:32.643364' WHERE "authors"."id" = 1[0m
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 78.6ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:32:32 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 41.0ms (Views: 39.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:32:32 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:32:32 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"demouser@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAuthor Exists (0.0ms)[0m  SELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'demouser@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-09 14:33:02 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1587.1ms)
+Completed 200 OK in 1729.2ms (Views: 1630.2ms | ActiveRecord: 3.0ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:33:04 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:33:04 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:33:04 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"john.smith@apple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'john.smith@apple.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "authors" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 09 Nov 2014 20:33:04 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "john.smith@apple.com"], ["encrypted_password", "$2a$04$OgxXN5d0qWhgAOYWPDm2D./RzrRKjdgwJhS/rErYZhuDhKIwPG/Le"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 09 Nov 2014 20:33:04 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-09 20:33:04.284769', "current_sign_in_at" = '2014-11-09 20:33:04.284769', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-09 20:33:04.285769' WHERE "authors"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 73.1ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-09 14:33:04 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 39.0ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (3.0ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-10 16:48:42 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 2.3ms (Views: 1.8ms | ActiveRecord: 0.1ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-10 16:48:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 2.5ms (Views: 2.1ms | ActiveRecord: 0.2ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-10 16:48:42 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (0.7ms)
-Completed 200 OK in 1.8ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-09 14:33:04 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/authors" for 127.0.0.1 at 2014-11-09 14:33:04 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"email"=>"demouser@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAuthor Exists (1.0ms)[0m  SELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'demouser@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
-  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.2ms)[0m  commit transaction
-  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-10 17:10:51 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
-  Rendered search_pages/index.html.erb within layouts/application (7.0ms)
-Completed 200 OK in 73.0ms (Views: 30.0ms | ActiveRecord: 2.9ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=A&commit=Search" for 127.0.0.1 at 2014-11-10 17:10:51 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"A", "commit"=>"Search"}
-  [1m[36mSearchPage Load (6.6ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%A%' OR author LIKE '%A%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (11.7ms)
-Completed 200 OK in 23.7ms (Views: 15.7ms | ActiveRecord: 6.6ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-10 17:10:51 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.4ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')
-  Rendered search_pages/index.html.erb within layouts/application (3.3ms)
-Completed 200 OK in 8.3ms (Views: 7.0ms | ActiveRecord: 0.4ms)
-  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
-  [1m[35m (0.2ms)[0m  begin transaction
-  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  begin transaction
-Started GET "/search_pages" for 127.0.0.1 at 2014-11-10 17:10:51 -0500
-Processing by SearchPagesController#index as HTML
-  [1m[36mSearchPage Load (0.5ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
-  Rendered search_pages/index.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 16.1ms (Views: 8.9ms | ActiveRecord: 0.5ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=Author&commit=Search" for 127.0.0.1 at 2014-11-10 17:10:51 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"Author", "commit"=>"Search"}
-  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%Author%' OR author LIKE '%Author%')
-  Rendered search_pages/index.html.erb within layouts/application (3.3ms)
-Completed 200 OK in 21.2ms (Views: 19.9ms | ActiveRecord: 0.3ms)
-Started GET "/search_pages?utf8=%E2%9C%93&search=with&commit=Search" for 127.0.0.1 at 2014-11-10 17:10:51 -0500
-Processing by SearchPagesController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>"with", "commit"=>"Search"}
-  [1m[36mSearchPage Load (0.3ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%with%' OR author LIKE '%with%')[0m
-  Rendered search_pages/index.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 17.7ms (Views: 16.3ms | ActiveRecord: 0.3ms)
-  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 15:59:57 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 83.1ms (Views: 27.0ms | ActiveRecord: 25.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 16:00:59 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 86.0ms (Views: 28.0ms | ActiveRecord: 26.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 16:02:45 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 88.0ms (Views: 29.0ms | ActiveRecord: 25.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 16:08:07 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 81.0ms (Views: 26.0ms | ActiveRecord: 23.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 16:10:10 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 81.0ms (Views: 26.0ms | ActiveRecord: 24.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 17:08:16 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 83.0ms (Views: 27.0ms | ActiveRecord: 26.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-10 17:08:16 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1610.2ms)
+  Rendered papers/new.html.erb within layouts/application (1617.2ms)
+Completed 200 OK in 1625.7ms (Views: 1620.7ms | ActiveRecord: 0.0ms)
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 17:08:18 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "paper"=>{"title"=>"Experiment1", "author"=>"monica", "description"=>"sample paper 1"}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 14.0ms
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 17:09:03 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 81.0ms (Views: 26.0ms | ActiveRecord: 23.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 17:10:54 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 82.1ms (Views: 27.0ms | ActiveRecord: 24.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 17:11:55 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 83.1ms (Views: 27.0ms | ActiveRecord: 23.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 17:13:32 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 83.0ms (Views: 28.0ms | ActiveRecord: 25.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 17:43:00 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 85.0ms (Views: 29.0ms | ActiveRecord: 24.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
