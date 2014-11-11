@@ -10,6 +10,8 @@
 #
 
 class UserFaq < ActiveRecord::Base
+
+  attr_accessible :Question, :paper_id, :paper_attributes
   belongs_to :paper
-  attr_accessible :Question
+  validates :Question, :presence => true
 end

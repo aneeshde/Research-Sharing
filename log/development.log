@@ -13143,3 +13143,1738 @@ Served asset /userquestions.js - 304 Not Modified (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 18:12:53 -0600
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 21:29:25 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mUserFaq Load (0.0ms)[0m  SELECT "user_faqs".* FROM "user_faqs" 
+  Rendered user_faqs/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 347.3ms (Views: 140.1ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /page.css - 200 OK (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /application.css - 200 OK (16ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /papers.css - 200 OK (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /user_fa_qs.css - 200 OK (3ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /userquestions.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /jquery_ujs.js - 200 OK (43ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /page.js - 200 OK (3ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /papers.js - 200 OK (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /user_fa_qs.js - 200 OK (2ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /userquestions.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 21:29:26 -0600
+Served asset /application.js - 200 OK (10ms)
+
+
+Started GET "/user_faqs/new" for 127.0.0.1 at 2014-11-10 21:29:28 -0600
+Processing by UserFaqsController#new as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered user_faqs/_form.html.erb (1315.6ms)
+  Rendered user_faqs/new.html.erb within layouts/application (1321.6ms)
+Completed 200 OK in 1334.6ms (Views: 1329.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 21:37:00 -0600
+
+ArgumentError (You need to supply at least one validation):
+  app/models/user_faq.rb:16:in `<class:UserFaq>'
+  app/models/user_faq.rb:12:in `<top (required)>'
+  app/controllers/user_faqs_controller.rb:1:in `<top (required)>'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 21:37:58 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mUserFaq Load (0.0ms)[0m  SELECT "user_faqs".* FROM "user_faqs" 
+  Rendered user_faqs/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 54.7ms (Views: 16.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 21:37:58 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 21:37:59 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/user_faqs/new" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Processing by UserFaqsController#new as HTML
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered user_faqs/_form.html.erb (9.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 61.0ms (Views: 43.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:01 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 21:38:03 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+Completed 500 Internal Server Error in 5.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: paper_id):
+  app/controllers/user_faqs_controller.rb:24:in `new'
+  app/controllers/user_faqs_controller.rb:24:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.0ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 21:38:52 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+Completed 500 Internal Server Error in 49.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: paper_id):
+  app/controllers/user_faqs_controller.rb:24:in `new'
+  app/controllers/user_faqs_controller.rb:24:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.0ms)
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 21:38:54 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mUserFaq Load (0.0ms)[0m  SELECT "user_faqs".* FROM "user_faqs" 
+  Rendered user_faqs/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 20.0ms (Views: 18.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:54 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:55 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/user_faqs/new" for 127.0.0.1 at 2014-11-10 21:38:57 -0600
+Processing by UserFaqsController#new as HTML
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered user_faqs/_form.html.erb (10.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 66.0ms (Views: 46.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:57 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 21:38:58 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 21:39:00 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+Completed 500 Internal Server Error in 3.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: paper_id):
+  app/controllers/user_faqs_controller.rb:24:in `new'
+  app/controllers/user_faqs_controller.rb:24:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.0ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 21:43:45 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+Completed 500 Internal Server Error in 5.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: paper_id):
+  app/controllers/user_faqs_controller.rb:24:in `new'
+  app/controllers/user_faqs_controller.rb:24:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.0ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 22:44:01 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+Completed 500 Internal Server Error in 32.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: paper_id):
+  app/controllers/user_faqs_controller.rb:24:in `new'
+  app/controllers/user_faqs_controller.rb:24:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 22:44:03 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mUserFaq Load (0.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" [0m
+  Rendered user_faqs/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 20.0ms (Views: 19.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_faqs/new" for 127.0.0.1 at 2014-11-10 22:44:05 -0600
+Processing by UserFaqsController#new as HTML
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  Rendered user_faqs/_form.html.erb (3.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 17.0ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 22:44:07 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+Completed 500 Internal Server Error in 3.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: paper_id):
+  app/controllers/user_faqs_controller.rb:24:in `new'
+  app/controllers/user_faqs_controller.rb:24:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.0ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered user_faqs/_form.html.erb (4.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 77.1ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:44 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:45 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:45 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:45 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 22:46:45 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 22:46:59 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"question1", "paper_id"=>"2"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35m (58.0ms)[0m  begin transaction
+  [1m[36mSQL (38.0ms)[0m  [1mINSERT INTO "user_faqs" ("Question", "created_at", "paper_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["Question", "question1"], ["created_at", Tue, 11 Nov 2014 04:46:59 UTC +00:00], ["paper_id", 2], ["updated_at", Tue, 11 Nov 2014 04:46:59 UTC +00:00]]
+  [1m[35m (154.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/user_faqs/1
+Completed 302 Found in 268.9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_faqs/1" for 127.0.0.1 at 2014-11-10 22:46:59 -0600
+Processing by UserFaqsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserFaq Load (1.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = 2 LIMIT 1[0m
+  Rendered user_faqs/show.html.erb within layouts/application (119.2ms)
+Completed 200 OK in 200.3ms (Views: 191.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:00 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mUserFaq Load (1.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" [0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = 2 LIMIT 1
+  Rendered user_faqs/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 33.0ms (Views: 26.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:04 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/user_faqs/new" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Processing by UserFaqsController#new as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered user_faqs/_form.html.erb (6.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 39.0ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 22:47:10 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 22:47:11 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered user_faqs/_form.html.erb (2.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 38.0ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:12:51 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/user_faqs" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Processing by UserFaqsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "user_faq"=>{"Question"=>"question2", "paper_id"=>"1"}, "commit"=>"Create User faq"}
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "user_faqs" ("Question", "created_at", "paper_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["Question", "question2"], ["created_at", Tue, 11 Nov 2014 05:19:22 UTC +00:00], ["paper_id", 1], ["updated_at", Tue, 11 Nov 2014 05:19:22 UTC +00:00]]
+  [1m[35m (168.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/user_faqs/2
+Completed 302 Found in 174.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_faqs/2" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Processing by UserFaqsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUserFaq Load (0.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = 1 LIMIT 1[0m
+  Rendered user_faqs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12.0ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:22 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:23 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:23 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:23 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:23 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:19:23 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 23:23:12 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mUserFaq Load (0.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" [0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = 2 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = 1 LIMIT 1[0m
+  Rendered user_faqs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 17.0ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:12 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:12 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:13 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/user_faqs/new" for 127.0.0.1 at 2014-11-10 23:23:16 -0600
+Processing by UserFaqsController#new as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  Rendered user_faqs/_form.html.erb (3.0ms)
+  Rendered user_faqs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 12.0ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:16 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:16 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:23:17 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/user_faqs" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Processing by UserFaqsController#index as HTML
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mUserFaq Load (0.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" [0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = 2 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = 1 LIMIT 1[0m
+  Rendered user_faqs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 13.0ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:24:07 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 23:40:17 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  Rendered papers/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 44.0ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:17 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:17 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:18 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35.0ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:21 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2m38QmqdvTVwDrJayFWPEOuCFv6O3rov/kQdClzpHw=", "author"=>{"email"=>"aneeshde@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-11 00:12:52.593869', "current_sign_in_at" = '2014-11-11 05:40:32.264512', "sign_in_count" = 13, "updated_at" = '2014-11-11 05:40:32.265512' WHERE "authors"."id" = 2[0m
+  [1m[35m (98.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 235.5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 20.0ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:32 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:33 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:33 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:33 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:33 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:33 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (5.0ms)
+  Rendered papers/new.html.erb within layouts/application (8.0ms)
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 29.0ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:40:38 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:41:41 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 13.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50488080) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:42:52 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 14.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50619312) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 23:42:54 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 27.0ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:54 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:54 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:55 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (4.0ms)
+  Rendered papers/new.html.erb within layouts/application (6.0ms)
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 26.0ms (Views: 24.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:42:57 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:42:58 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:43:00 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 1.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50619312) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:43:51 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 34.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50679996) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 23:43:53 -0600
+Processing by PapersController#index as HTML
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" [0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 27.0ms (Views: 24.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:53 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:54 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (2.0ms)
+  Rendered papers/new.html.erb within layouts/application (23.0ms)
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 32.0ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:56 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:57 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:57 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:57 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:57 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:57 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:43:57 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:43:59 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 2.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50679996) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:44:48 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 15.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50737068) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Processing by PapersController#index as HTML
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 50.0ms (Views: 48.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:50 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (2.0ms)
+  Rendered papers/new.html.erb within layouts/application (4.0ms)
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 12.0ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:52 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 23:44:53 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-10 23:44:55 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dotd/qPgJfLm5wVy1A5OQ9mh+BhX30SAhW7dlW81m0c=", "paper"=>{"title"=>"", "author"=>"", "description"=>""}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 1.0ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#50737068) expected, got String(#15217824)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
