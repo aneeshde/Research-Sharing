@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @user_faq.Question %>
+</p>
+
+<p>
+  <b>Paper:</b>
+  <%= @user_faq.paper %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_faq_path(@user_faq) %> |
+<%= link_to 'Back', user_faqs_path %>

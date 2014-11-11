@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @paper.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @paper.author %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @paper.description %>
+</p>
+
+<p>
+  <b>User FAQ's:</b>
+  <% @paper.user_faqs.each do |faq| %>
+      <br /><%= faq.Question %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'My PDF', @paper.pdf.url %>
+</p>
+<%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Back', papers_path %>
