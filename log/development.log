@@ -14878,3 +14878,1887 @@ ActiveRecord::AssociationTypeMismatch (Author(#50737068) expected, got String(#1
   Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
   Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
   Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (39.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "search_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "title" varchar(255), "publication_date" date, "SPARK_publication_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141108022649')[0m
+  [1m[35m (120.3ms)[0m  commit transaction
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) 
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "taggable_id" integer, "taggable_type" varchar(255), "tagger_id" integer, "tagger_type" varchar(255), "context" varchar(128), "created_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141109231849')
+  [1m[36m (112.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddMissingUniqueIndices (20141109231850)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_tags_on_name" ON "tags" ("name")[0m
+  [1m[35m (0.2ms)[0m  DROP INDEX "index_taggings_on_tag_id"
+  [1m[36m (0.1ms)[0m  [1mDROP INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context"[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "taggings_idx" ON "taggings" ("tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141109231850')[0m
+  [1m[35m (164.8ms)[0m  commit transaction
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (20.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-16 22:17:24 -0500
+Served asset /rails.png - 200 OK (17ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-16 22:19:56 -0500
+Processing by PageController#login as HTML
+  Rendered page/login.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 107.7ms
+
+ActionView::Template::Error (cannot load such file -- less
+  (in /home/aneesh/CIT 597/Research-Sharing/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+    2: <html>
+    3: <head>
+    4:   <title>Research Sharing Project</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1833535103106663504_33078500'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-16 22:20:19 -0500
+Served asset /rails.png - 304 Not Modified (3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-11-16 22:20:24 -0500
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/page/login" for 127.0.0.1 at 2014-11-16 22:20:37 -0500
+Processing by PageController#login as HTML
+  Rendered page/login.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 17.0ms
+
+ActionView::Template::Error (cannot load such file -- less
+  (in /home/aneesh/CIT 597/Research-Sharing/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+    2: <html>
+    3: <head>
+    4:   <title>Research Sharing Project</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1833535103106663504_33078500'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.6ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-16 22:35:54 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1045.9ms)
+Completed 500 Internal Server Error in 1155.5ms
+
+ActionView::Template::Error (cannot load such file -- less
+  (in /home/aneesh/CIT 597/Research-Sharing/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+    2: <html>
+    3: <head>
+    4:   <title>Research Sharing Project</title>
+    5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1833535103106663504_33078500'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-16 22:37:30 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1044.7ms)
+Compiled bootstrap_and_overrides.css  (783ms)  (pid 7659)
+Warning. Error encountered while saving cache /home/aneesh/CIT 597/Research-Sharing/tmp/cache/sass/c22d3679ac858630239e7150d00f09e54be5fa8d/page.css.scssc: can't dump anonymous class #<Class:0x00000002849368>
+Compiled page.css  (58ms)  (pid 7659)
+Warning. Error encountered while saving cache /home/aneesh/CIT 597/Research-Sharing/tmp/cache/sass/c22d3679ac858630239e7150d00f09e54be5fa8d/papers.css.scssc: can't dump anonymous class #<Class:0x00000002849368>
+Compiled papers.css  (1ms)  (pid 7659)
+Warning. Error encountered while saving cache /home/aneesh/CIT 597/Research-Sharing/tmp/cache/sass/c22d3679ac858630239e7150d00f09e54be5fa8d/scaffolds.css.scssc: can't dump anonymous class #<Class:0x00000002849368>
+Compiled scaffolds.css  (8ms)  (pid 7659)
+Warning. Error encountered while saving cache /home/aneesh/CIT 597/Research-Sharing/tmp/cache/sass/c22d3679ac858630239e7150d00f09e54be5fa8d/search_pages.css.scssc: can't dump anonymous class #<Class:0x00000002849368>
+Compiled search_pages.css  (1ms)  (pid 7659)
+Warning. Error encountered while saving cache /home/aneesh/CIT 597/Research-Sharing/tmp/cache/sass/c22d3679ac858630239e7150d00f09e54be5fa8d/user_fa_qs.css.scssc: can't dump anonymous class #<Class:0x00000002849368>
+Compiled user_fa_qs.css  (1ms)  (pid 7659)
+Warning. Error encountered while saving cache /home/aneesh/CIT 597/Research-Sharing/tmp/cache/sass/c22d3679ac858630239e7150d00f09e54be5fa8d/userquestions.css.scssc: can't dump anonymous class #<Class:0x00000002849368>
+Compiled userquestions.css  (1ms)  (pid 7659)
+Compiled application.css  (1019ms)  (pid 7659)
+Compiled jquery.js  (1ms)  (pid 7659)
+Compiled jquery_ujs.js  (0ms)  (pid 7659)
+Compiled bootstrap.js  (103ms)  (pid 7659)
+Compiled page.js  (2ms)  (pid 7659)
+Compiled papers.js  (0ms)  (pid 7659)
+Compiled search_pages.js  (0ms)  (pid 7659)
+Compiled user_fa_qs.js  (0ms)  (pid 7659)
+Compiled userquestions.js  (0ms)  (pid 7659)
+Compiled application.js  (228ms)  (pid 7659)
+Completed 200 OK in 2494.9ms (Views: 2388.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /application.css - 200 OK (44ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /bootstrap_and_overrides.css - 200 OK (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /page.css - 200 OK (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /search_pages.css - 200 OK (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /papers.css - 200 OK (2ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /user_fa_qs.css - 200 OK (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-16 22:37:32 -0500
+Served asset /userquestions.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /jquery.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /bootstrap.js - 200 OK (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /page.js - 200 OK (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /papers.js - 200 OK (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /search_pages.js - 200 OK (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /user_fa_qs.js - 200 OK (2ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /userquestions.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-16 22:37:33 -0500
+Served asset /application.js - 200 OK (41ms)
+
+
+Started GET "/authors/sign_up" for 127.0.0.1 at 2014-11-16 22:37:45 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31.2ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2014-11-16 22:38:04 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1S9FL5fQHP6Mf9QgylGs5BkmZUdPDtkEsDFS9Ht6EYY=", "author"=>{"email"=>"aneeshde@seas.upenn.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Exists (0.1ms)[0m  SELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'aneeshde@seas.upenn.edu' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (24.6ms)[0m  [1mINSERT INTO "authors" ("attach_content_type", "attach_file_name", "attach_file_size", "attach_updated_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["attach_content_type", nil], ["attach_file_name", nil], ["attach_file_size", nil], ["attach_updated_at", nil], ["created_at", Mon, 17 Nov 2014 03:38:04 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "aneeshde@seas.upenn.edu"], ["encrypted_password", "$2a$10$xhpLEzHRvk5SBwnOarkgn.WkBzwLHa2kYXnvMI0LqAE6lrlmQyeXS"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Mon, 17 Nov 2014 03:38:04 UTC +00:00]]
+  [1m[35m (124.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  UPDATE "authors" SET "last_sign_in_at" = '2014-11-17 03:38:04.374531', "current_sign_in_at" = '2014-11-17 03:38:04.374531', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-17 03:38:04.377203' WHERE "authors"."id" = 6
+  [1m[36m (113.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 515.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-16 22:38:04 -0500
+Served asset /rails.png - 304 Not Modified (3ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-16 22:38:39 -0500
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36mPaper Load (0.1ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 6)[0m
+SQLite3::SQLException: no such column: author_id: SELECT "papers".* FROM "papers"  WHERE (author_id = 6)
+  Rendered papers/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 56.1ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: author_id: SELECT "papers".* FROM "papers"  WHERE (author_id = 6)):
+    13: 
+    14: 
+    15: <br/>
+    16: <% @papers.each do |paper| %>
+    17:   <tr>
+    18: 
+    19:     <td><%= paper.title %></td>
+  app/views/papers/index.html.erb:16:in `_app_views_papers_index_html_erb___2803781506686634858_70328781226360'
+  app/controllers/papers_controller.rb:7:in `index'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (20.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to AddAttachPaperclip (20141110011830)
+Migrating to AddNameToAuthors (20141117025922)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "name" varchar(255)
+SQLite3::SQLException: duplicate column name: name: ALTER TABLE "authors" ADD "name" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to AddAttachPaperclip (20141110011830)
+Migrating to AddNameToAuthors (20141117025922)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "authors" ADD "name" varchar(255)
+SQLite3::SQLException: duplicate column name: name: ALTER TABLE "authors" ADD "name" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to AddAttachPaperclip (20141110011830)
+Migrating to AddAuthorIdToPapers (20141117031117)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "papers" ADD "author_id" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141117031117')[0m
+  [1m[35m (128.1ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to AddAttachPaperclip (20141110011830)
+Migrating to AddAuthorIdToPapers (20141117031117)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-16 23:26:39 -0500
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mPaper Load (0.1ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 6)
+  Rendered papers/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 252.1ms (Views: 117.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /page.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /search_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /userquestions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /userquestions.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-16 23:26:40 -0500
+Served asset /application.js - 304 Not Modified (10ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/author_login" for 127.0.0.1 at 2014-11-16 23:29:14 -0500
+
+ActionController::RoutingError (No route matches [GET] "/author_login"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (29.8ms)
+
+
+Started GET "/authors_login" for 127.0.0.1 at 2014-11-16 23:29:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/authors_login"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-11-16 23:29:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/author" for 127.0.0.1 at 2014-11-16 23:29:54 -0500
+
+ActionController::RoutingError (No route matches [GET] "/author"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-16 23:29:57 -0500
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mPaper Load (0.1ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 6)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (88.7ms)
+Completed 200 OK in 269.6ms (Views: 133.5ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /application.css - 304 Not Modified (48ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /papers.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /search_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /userquestions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /page.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-16 23:29:58 -0500
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started DELETE "/authors/sign_out" for 127.0.0.1 at 2014-11-16 23:30:02 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1S9FL5fQHP6Mf9QgylGs5BkmZUdPDtkEsDFS9Ht6EYY="}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 904.1ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-16 23:30:03 -0500
+Served asset /rails.png - 304 Not Modified (2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-16 23:30:30 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (1038.0ms)
+Completed 200 OK in 1194.2ms (Views: 1089.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /application.css - 304 Not Modified (57ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /page.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /search_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:32 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fJiYFt+8zs5YRpVKgMmwhCaWmhdViXzI4DXtCAmCMvo=", "author"=>{"email"=>"aneesh.de@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneesh.de@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 79.5ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fJiYFt+8zs5YRpVKgMmwhCaWmhdViXzI4DXtCAmCMvo=", "author"=>{"email"=>"aneesh.de@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 93.0ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:46 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:47 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:47 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:47 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:47 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:47 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-16 23:30:47 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-16 23:30:59 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fJiYFt+8zs5YRpVKgMmwhCaWmhdViXzI4DXtCAmCMvo=", "author"=>{"email"=>"aneeshde@seas.upenn.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@seas.upenn.edu' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  UPDATE "authors" SET "current_sign_in_at" = '2014-11-17 04:30:59.267033', "sign_in_count" = 2, "updated_at" = '2014-11-17 04:30:59.293503' WHERE "authors"."id" = 6
+  [1m[36m (118.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 308.9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-16 23:30:59 -0500
+Served asset /rails.png - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (11.3ms)
+  Rendered papers/new.html.erb within layouts/application (22.7ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+Completed 200 OK in 71.0ms (Views: 63.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-16 23:31:23 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/papers/" for 127.0.0.1 at 2014-11-17 08:20:34 -0500
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mPaper Load (0.1ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 6)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (75.4ms)
+Completed 200 OK in 278.4ms (Views: 155.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /page.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /userquestions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:35 -0500
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 08:20:41 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1183.0ms)
+  Rendered papers/new.html.erb within layouts/application (1222.1ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+Completed 200 OK in 1265.2ms (Views: 1263.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 08:20:42 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (3.0ms)
+  Rendered papers/new.html.erb within layouts/application (4.3ms)
+  [1m[36mAuthor Load (0.5ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+Completed 200 OK in 21.2ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /page.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 08:22:18 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 08:22:40 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+f6Woyq1J1/tt5/RrFxKaIkfy7nISCrr5+v/PHEraaA=", "paper"=>{"title"=>"Mutemath", "author"=>"Typical", "description"=>"An Awesome song!"}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 1.1ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#34051440) expected, got String(#15482200)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 08:23:20 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+f6Woyq1J1/tt5/RrFxKaIkfy7nISCrr5+v/PHEraaA=", "paper"=>{"title"=>"Mutemath", "author"=>"Aneesh", "description"=>"An Awesome song!"}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 0.5ms
+
+ActiveRecord::AssociationTypeMismatch (Author(#34051440) expected, got String(#15482200)):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/paper/new" for 127.0.0.1 at 2014-11-17 16:44:35 -0500
+
+ActionController::RoutingError (No route matches [GET] "/paper/new"):
+  actionpack (3.2.19) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.19) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.19) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.19) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:17:in `call'
+  activesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  actionpack (3.2.19) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.19) lib/rails/engine.rb:484:in `call'
+  railties (3.2.19) lib/rails/application.rb:231:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:14:in `call'
+  railties (3.2.19) lib/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (24.2ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 16:44:43 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1171.2ms)
+  Rendered papers/new.html.erb within layouts/application (1211.2ms)
+Completed 200 OK in 1610.8ms (Views: 1439.9ms | ActiveRecord: 53.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /application.css - 200 OK (29ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /page.css - 200 OK (4ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /bootstrap_and_overrides.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /scaffolds.css - 200 OK (4ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /papers.css - 200 OK (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /search_pages.css - 200 OK (3ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /user_fa_qs.css - 200 OK (3ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /userquestions.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /jquery.js - 200 OK (44ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /jquery_ujs.js - 200 OK (9ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /bootstrap.js - 200 OK (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /page.js - 200 OK (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /papers.js - 200 OK (33ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /search_pages.js - 200 OK (7ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /user_fa_qs.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /application.js - 200 OK (14ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 16:44:45 -0500
+Served asset /userquestions.js - 200 OK (3ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 16:45:41 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (3.6ms)
+  Rendered papers/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13.7ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-17 17:44:09 -0500
+Served asset /rails.png - 200 OK (20ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 17:44:15 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1040.7ms)
+  Rendered papers/new.html.erb within layouts/application (1081.2ms)
+Completed 200 OK in 1230.0ms (Views: 1159.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /page.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /userquestions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 17:44:16 -0500
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 17:44:34 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cJK7TWCAHHANI1LLJRtw1eDf0Q/oiiVHyWjZTe3E+dI=", "paper"=>{"title"=>"Mutemath", "description"=>"Typical"}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 1.9ms
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/papers_controller.rb:44:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Processing by PapersController#index as HTML
+  Rendered papers/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19.9ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:29 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:30 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:30 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 102.4ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:32 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-17 17:45:42 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cJK7TWCAHHANI1LLJRtw1eDf0Q/oiiVHyWjZTe3E+dI=", "author"=>{"email"=>"aneeshde@seas.upenn.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@seas.upenn.edu' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (14.1ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-17 04:30:59.267033', "current_sign_in_at" = '2014-11-17 22:45:42.627711', "sign_in_count" = 3, "updated_at" = '2014-11-17 22:45:42.658776' WHERE "authors"."id" = 6[0m
+  [1m[35m (109.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 382.9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (2.2ms)
+  Rendered papers/new.html.erb within layouts/application (3.4ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+Completed 200 OK in 14.2ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 17:45:50 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 17:46:00 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaaN6PnZrTmhtaXsrt4F0TUEvH1FVz35zpKUKWnQ3k8=", "paper"=>{"title"=>"Mutemath", "description"=>"Typical"}, "commit"=>"Create Paper"}
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 109.1ms
+
+NoMethodError (undefined method `pdf_content_type' for #<Paper:0x007fced88bf2f0>):
+  app/controllers/papers_controller.rb:47:in `block in create'
+  app/controllers/papers_controller.rb:46:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (2.4ms)
+  Rendered papers/new.html.erb within layouts/application (3.0ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+Completed 200 OK in 11.4ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /userquestions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-17 17:47:14 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 17:47:23 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaaN6PnZrTmhtaXsrt4F0TUEvH1FVz35zpKUKWnQ3k8=", "paper"=>{"title"=>"Mutemath", "description"=>"Typical"}, "commit"=>"Create Paper"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 8.5ms
+
+NoMethodError (undefined method `pdf_content_type' for #<Paper:0x007fced879af28>):
+  app/controllers/papers_controller.rb:47:in `block in create'
+  app/controllers/papers_controller.rb:46:in `create'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 17:54:55 -0500
+
+ActionController::RoutingError (undefined method `_pdf_post_process_callbacks' for #<Class:0x000000033f1d78>):
+  app/models/paper.rb:26:in `<class:Paper>'
+  app/models/paper.rb:13:in `<top (required)>'
+  app/controllers/papers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 17:55:56 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaaN6PnZrTmhtaXsrt4F0TUEvH1FVz35zpKUKWnQ3k8=", "paper"=>{"title"=>"Mutemath", "description"=>"Typical"}, "commit"=>"Create Paper"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "papers" ("author", "author_id", "created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["author", nil], ["author_id", 6], ["created_at", Mon, 17 Nov 2014 22:55:56 UTC +00:00], ["description", "Typical"], ["title", "Mutemath"], ["updated_at", Mon, 17 Nov 2014 22:55:56 UTC +00:00]]
+  [1m[36m (96.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/papers/4
+Completed 302 Found in 156.1ms (ActiveRecord: 98.1ms)
+
+
+Started GET "/papers/4" for 127.0.0.1 at 2014-11-17 17:55:56 -0500
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPaper Load (0.3ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mUserFaq Load (0.1ms)[0m  SELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."paper_id" = 4
+  Rendered papers/show.html.erb within layouts/application (34.2ms)
+Completed 500 Internal Server Error in 39.2ms
+
+ActionView::Template::Error (undefined method `pdf' for #<Paper:0x000000033f4028>):
+    23: </p>
+    24: 
+    25: <p>
+    26:   <%= link_to 'My PDF', @paper.pdf.url %>
+    27: </p>
+    28: <%= link_to 'Edit', edit_paper_path(@paper) %> |
+    29: <%= link_to 'Back', papers_path %>
+  app/views/papers/show.html.erb:26:in `_app_views_papers_show_html_erb__629431606190710400_25910800'
+  app/controllers/papers_controller.rb:18:in `show'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.2ms)
+
+
+Started GET "/papers/4" for 127.0.0.1 at 2014-11-17 17:56:56 -0500
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPaper Load (0.2ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mAuthor Load (0.6ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36mUserFaq Load (0.2ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."paper_id" = 4[0m
+  Rendered papers/show.html.erb within layouts/application (33.4ms)
+Completed 500 Internal Server Error in 39.0ms
+
+ActionView::Template::Error (undefined method `pdf' for #<Paper:0x007fced88d8048>):
+    23: </p>
+    24: 
+    25: <!-- <p>
+    26:   <%= link_to 'My PDF', @paper.pdf.url %>
+    27: </p> -->
+    28: <%= link_to 'Edit', edit_paper_path(@paper) %> |
+    29: <%= link_to 'Back', papers_path %>
+  app/views/papers/show.html.erb:26:in `_app_views_papers_show_html_erb__629431606190710400_70263186629700'
+  app/controllers/papers_controller.rb:18:in `show'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.7ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-17 17:57:00 -0500
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaaN6PnZrTmhtaXsrt4F0TUEvH1FVz35zpKUKWnQ3k8=", "paper"=>{"title"=>"Mutemath", "description"=>"Typical"}, "commit"=>"Create Paper"}
+  [1m[35mAuthor Load (0.7ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "papers" ("author", "author_id", "created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["author", nil], ["author_id", 6], ["created_at", Mon, 17 Nov 2014 22:57:00 UTC +00:00], ["description", "Typical"], ["title", "Mutemath"], ["updated_at", Mon, 17 Nov 2014 22:57:00 UTC +00:00]]
+  [1m[35m (102.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/papers/5
+Completed 302 Found in 112.5ms (ActiveRecord: 103.9ms)
+
+
+Started GET "/papers/5" for 127.0.0.1 at 2014-11-17 17:57:00 -0500
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPaper Load (0.2ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36mUserFaq Load (0.2ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."paper_id" = 5[0m
+  Rendered papers/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 8.4ms
+
+ActionView::Template::Error (undefined method `pdf' for #<Paper:0x007fced801fbe0>):
+    23: </p>
+    24: 
+    25: <!-- <p>
+    26:   <%= link_to 'My PDF', @paper.pdf.url %>
+    27: </p> -->
+    28: <%= link_to 'Edit', edit_paper_path(@paper) %> |
+    29: <%= link_to 'Back', papers_path %>
+  app/views/papers/show.html.erb:26:in `_app_views_papers_show_html_erb__629431606190710400_70263186629700'
+  app/controllers/papers_controller.rb:18:in `show'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)

@@ -2,8 +2,8 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    # @papers = Paper.where("author = ?", current_author.name) if author_signed_in?
-    @papers=Paper.all
+    @papers = Paper.where("author_id = ?", current_author.id) if author_signed_in?
+    # @papers=Paper.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @papers }
@@ -41,6 +41,7 @@ class PapersController < ApplicationController
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
+    @paper.author_id = current_author.id
 
     respond_to do |format|
       if @paper.save
