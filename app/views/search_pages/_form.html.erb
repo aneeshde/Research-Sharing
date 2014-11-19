@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+
+
+
+<div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
+
+
   <div class="field">
     <%= f.label :author %><br />
     <%= f.text_field :author %>
@@ -31,9 +40,9 @@
     <%= f.submit %>
   </div>
 
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />
     <%= f.text_field :tag_list %>
-  </div>
+  </div> -->
 
 <% end %>

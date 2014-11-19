@@ -6,6 +6,7 @@
     <th>Title</th>
     <th>Publication date</th>
     <th>Spark publication date</th>
+    <th>Tags</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= search_page.title %></td>
     <td><%= search_page.publication_date %></td>
     <td><%= search_page.SPARK_publication_date %></td>
+    <td><%= raw search_page.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
     <td><%= link_to 'Show', search_page %></td>
     <td><%= link_to 'Edit', edit_search_page_path(search_page) %></td>
     <td><%= link_to 'Destroy', search_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,16 +27,28 @@
 </table>
 
 <br />
-
+<br />
 <!-- search field -->
 
 <%= form_tag search_pages_path, :method => 'get' do %>
   <p>
+  <lbael>Type in author/title/publication date: </lbael><br/>
     <%= text_field_tag :search, params[:search] %>
     <br />
-    <%= submit_tag "Search", :author => nil %>
+    <%= submit_tag "Search", :author => nil%>
   </p>
 <% end %>
+
+<!--<%= form_tag search_pages_path, :method => 'get' do %>
+  <p>
+    <label>author: </label>
+    <%= text_field_tag :author, params[:author] %><br/>
+    <label>title: </label>
+    <%= text_field_tag :title, params[:title] %>
+    <br />
+    <%= submit_tag "Search", :author => nil%>
+  </p>
+<% end %>-->
 
 
 <%=link_to "Author", "http://localhost:3000/search_pages?utf8=%E2%9C%93&search=A&commit=Search"%>

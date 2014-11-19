@@ -16762,3 +16762,1907 @@ ActionView::Template::Error (undefined method `pdf' for #<Paper:0x007fced801fbe0
   Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
   Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
   Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "tags" ADD "taggings_count" integer DEFAULT 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" ORDER BY "tags"."id" ASC LIMIT 1000[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141109231851')
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddMissingTaggableIndex (20141109231852)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141109231852')
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachPaperclip (20141110011830)
+Migrating to AddAuthorIdToPapers (20141117031117)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/search_pages" for 127.0.0.1 at 2014-11-18 19:10:24 -0500
+Processing by SearchPagesController#index as HTML
+  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  Rendered search_pages/index.html.erb within layouts/application (3.4ms)
+Compiled bootstrap_and_overrides.css  (1325ms)  (pid 13077)
+Warning. Error encountered while saving cache /home/chou/Research-Sharing/tmp/cache/sass/83221a45791eb5370e1d9a0f0953a8f5f1865a2c/page.css.scssc: can't dump anonymous class #<Class:0x00000006032f40>
+
+Compiled page.css  (18ms)  (pid 13077)
+Warning. Error encountered while saving cache /home/chou/Research-Sharing/tmp/cache/sass/83221a45791eb5370e1d9a0f0953a8f5f1865a2c/papers.css.scssc: can't dump anonymous class #<Class:0x00000006032f40>
+
+Compiled papers.css  (1ms)  (pid 13077)
+Warning. Error encountered while saving cache /home/chou/Research-Sharing/tmp/cache/sass/83221a45791eb5370e1d9a0f0953a8f5f1865a2c/scaffolds.css.scssc: can't dump anonymous class #<Class:0x00000006032f40>
+
+Compiled scaffolds.css  (9ms)  (pid 13077)
+Warning. Error encountered while saving cache /home/chou/Research-Sharing/tmp/cache/sass/83221a45791eb5370e1d9a0f0953a8f5f1865a2c/search_pages.css.scssc: can't dump anonymous class #<Class:0x00000006032f40>
+
+Compiled search_pages.css  (1ms)  (pid 13077)
+Warning. Error encountered while saving cache /home/chou/Research-Sharing/tmp/cache/sass/83221a45791eb5370e1d9a0f0953a8f5f1865a2c/user_fa_qs.css.scssc: can't dump anonymous class #<Class:0x00000006032f40>
+
+Compiled user_fa_qs.css  (1ms)  (pid 13077)
+Warning. Error encountered while saving cache /home/chou/Research-Sharing/tmp/cache/sass/83221a45791eb5370e1d9a0f0953a8f5f1865a2c/userquestions.css.scssc: can't dump anonymous class #<Class:0x00000006032f40>
+
+Compiled userquestions.css  (3ms)  (pid 13077)
+Compiled application.css  (1384ms)  (pid 13077)
+Compiled jquery.js  (4ms)  (pid 13077)
+Compiled jquery_ujs.js  (0ms)  (pid 13077)
+Compiled bootstrap.js  (98ms)  (pid 13077)
+Compiled page.js  (0ms)  (pid 13077)
+Compiled papers.js  (0ms)  (pid 13077)
+Compiled search_pages.js  (0ms)  (pid 13077)
+Compiled user_fa_qs.js  (0ms)  (pid 13077)
+Compiled userquestions.js  (3ms)  (pid 13077)
+Compiled application.js  (153ms)  (pid 13077)
+Completed 200 OK in 1580.3ms (Views: 1567.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /search_pages.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /scaffolds.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /papers.css - 200 OK (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /page.css - 200 OK (4ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /user_fa_qs.css - 200 OK (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /userquestions.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /jquery.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /page.js - 200 OK (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /papers.js - 200 OK (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /user_fa_qs.js - 200 OK (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /userquestions.js - 200 OK (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:26 -0500
+Served asset /application.js - 200 OK (14ms)
+
+
+Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Processing by SearchPagesController#new as HTML
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/_form.html.erb (253.8ms)
+  Rendered search_pages/new.html.erb within layouts/application (258.8ms)
+Completed 200 OK in 271.7ms (Views: 267.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:31 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/search_pages" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Processing by SearchPagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4/QTkss1/hq672h2CfFLJZR96OLq4kV5mJyT10Cbl0=", "search_page"=>{"tag_list"=>"apple, potato", "author"=>"chou", "title"=>"ruby", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"19", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"19"}, "commit"=>"Create Search page"}
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["SPARK_publication_date", Wed, 19 Nov 2014], ["author", "chou"], ["created_at", Wed, 19 Nov 2014 00:10:44 UTC +00:00], ["publication_date", Wed, 19 Nov 2014], ["title", "ruby"], ["updated_at", Wed, 19 Nov 2014 00:10:44 UTC +00:00]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('apple') OR LOWER(name) = LOWER('potato'))[0m
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'apple' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "taggings_count") VALUES (?, ?)[0m  [["name", "apple"], ["taggings_count", 0]]
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'potato' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name", "taggings_count") VALUES (?, ?)[0m  [["name", "potato"], ["taggings_count", 0]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND "taggings"."taggable_id" = 1 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Wed, 19 Nov 2014 00:10:44 UTC +00:00], ["tag_id", 1], ["taggable_id", 1], ["taggable_type", "SearchPage"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND "taggings"."taggable_id" = 1 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Wed, 19 Nov 2014 00:10:44 UTC +00:00], ["tag_id", 2], ["taggable_id", 1], ["taggable_type", "SearchPage"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 2
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/search_pages/1
+Completed 302 Found in 145.9ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/search_pages/1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Processing by SearchPagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSearchPage Load (0.3ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered search_pages/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16.3ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:44 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:45 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/search_pages" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Processing by SearchPagesController#index as HTML
+  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 15.5ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:47 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/potato" for 127.0.0.1 at 2014-11-18 19:10:49 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"tag"=>"potato"}
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('potato'))[0m
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" JOIN taggings search_pages_taggings_2cfd60e ON search_pages_taggings_2cfd60e.taggable_id = search_pages.id AND search_pages_taggings_2cfd60e.taggable_type = 'SearchPage' AND search_pages_taggings_2cfd60e.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 16.9ms (Views: 14.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /papers.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:50 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/tags/apple" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"tag"=>"apple"}
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('apple'))[0m
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" JOIN taggings search_pages_taggings_298a5fc ON search_pages_taggings_298a5fc.taggable_id = search_pages.id AND search_pages_taggings_298a5fc.taggable_type = 'SearchPage' AND search_pages_taggings_298a5fc.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 17.5ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:51 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/search_pages/new" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Processing by SearchPagesController#new as HTML
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered search_pages/_form.html.erb (45.4ms)
+  Rendered search_pages/new.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 51.6ms (Views: 51.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:10:53 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/search_pages" for 127.0.0.1 at 2014-11-18 19:11:04 -0500
+Processing by SearchPagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4/QTkss1/hq672h2CfFLJZR96OLq4kV5mJyT10Cbl0=", "search_page"=>{"tag_list"=>"apple, dinner", "author"=>"chou", "title"=>"rails", "publication_date(1i)"=>"2014", "publication_date(2i)"=>"11", "publication_date(3i)"=>"19", "SPARK_publication_date(1i)"=>"2014", "SPARK_publication_date(2i)"=>"11", "SPARK_publication_date(3i)"=>"19"}, "commit"=>"Create Search page"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "search_pages" ("SPARK_publication_date", "author", "created_at", "publication_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["SPARK_publication_date", Wed, 19 Nov 2014], ["author", "chou"], ["created_at", Wed, 19 Nov 2014 00:11:04 UTC +00:00], ["publication_date", Wed, 19 Nov 2014], ["title", "rails"], ["updated_at", Wed, 19 Nov 2014 00:11:04 UTC +00:00]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('apple') OR LOWER(name) = LOWER('dinner'))
+  [1m[36mActsAsTaggableOn::Tag Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'dinner' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("name", "taggings_count") VALUES (?, ?)  [["name", "dinner"], ["taggings_count", 0]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Exists (0.1ms)[0m  SELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND "taggings"."taggable_id" = 2 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Wed, 19 Nov 2014 00:11:04 UTC +00:00], ["tag_id", 1], ["taggable_id", 2], ["taggable_type", "SearchPage"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1[0m
+  [1m[35mActsAsTaggableOn::Tagging Exists (0.2ms)[0m  SELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 3 AND "taggings"."taggable_type" = 'SearchPage' AND "taggings"."taggable_id" = 2 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Wed, 19 Nov 2014 00:11:04 UTC +00:00], ["tag_id", 3], ["taggable_id", 2], ["taggable_type", "SearchPage"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 3[0m
+  [1m[35m (6.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/search_pages/2
+Completed 302 Found in 47.4ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/search_pages/2" for 127.0.0.1 at 2014-11-18 19:11:04 -0500
+Processing by SearchPagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" WHERE "search_pages"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered search_pages/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 16.6ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:05 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/search_pages" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Processing by SearchPagesController#index as HTML
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 26.2ms (Views: 23.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/dinner" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"tag"=>"dinner"}
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('dinner'))[0m
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" JOIN taggings search_pages_taggings_cbab736 ON search_pages_taggings_cbab736.taggable_id = search_pages.id AND search_pages_taggings_cbab736.taggable_type = 'SearchPage' AND search_pages_taggings_cbab736.tag_id = 3
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 16.9ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:08 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:09 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:09 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:09 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:09 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:09 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/apple" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"tag"=>"apple"}
+  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('apple'))[0m
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" JOIN taggings search_pages_taggings_8f89b16 ON search_pages_taggings_8f89b16.taggable_id = search_pages.id AND search_pages_taggings_8f89b16.taggable_type = 'SearchPage' AND search_pages_taggings_8f89b16.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered search_pages/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 21.1ms (Views: 16.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:12 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=chou&commit=Search" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"chou", "commit"=>"Search"}
+  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 26.6ms (Views: 23.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:15 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=ruby&commit=Search" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ruby", "commit"=>"Search"}
+  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered search_pages/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 23.6ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:17 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /userquestions.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:18 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=ruby&commit=Search" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ruby", "commit"=>"Search"}
+  [1m[36mSearchPage Load (0.2ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (73.8ms)
+Completed 200 OK in 83.5ms (Views: 81.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:23 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=chou&commit=Search" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"chou", "commit"=>"Search"}
+  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered search_pages/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 28.8ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:34 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=2014-11-19&commit=Search" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"2014-11-19", "commit"=>"Search"}
+  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 24.6ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:51 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /page.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:52 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=ruby&commit=Search" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ruby", "commit"=>"Search"}
+  [1m[35mSearchPage Load (0.2ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (4.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered search_pages/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 29.2ms (Views: 21.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /search_pages.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:11:57 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/search_pages" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Processing by SearchPagesController#index as HTML
+  [1m[36mSearchPage Load (0.1ms)[0m  [1mSELECT "search_pages".* FROM "search_pages" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 124.0ms (Views: 89.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /userquestions.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /application.js - 200 OK (11ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:36 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/search_pages?utf8=%E2%9C%93&search=ruby&commit=Search" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"ruby", "commit"=>"Search"}
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" WHERE (title LIKE '%ruby%' OR author LIKE '%ruby%' OR publication_date LIKE '%ruby%' OR SPARK_publication_date LIKE '%ruby%')
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 24.5ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:42 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/potato" for 127.0.0.1 at 2014-11-18 19:34:44 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"tag"=>"potato"}
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('potato'))[0m
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" JOIN taggings search_pages_taggings_1b4e51b ON search_pages_taggings_1b4e51b.taggable_id = search_pages.id AND search_pages_taggings_1b4e51b.taggable_type = 'SearchPage' AND search_pages_taggings_1b4e51b.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered search_pages/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 92.1ms (Views: 14.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:45 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/tags/apple" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Processing by SearchPagesController#index as HTML
+  Parameters: {"tag"=>"apple"}
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" 
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('apple'))[0m
+  [1m[35mSearchPage Load (0.1ms)[0m  SELECT "search_pages".* FROM "search_pages" JOIN taggings search_pages_taggings_3e78493 ON search_pages_taggings_3e78493.taggable_id = search_pages.id AND search_pages_taggings_3e78493.taggable_type = 'SearchPage' AND search_pages_taggings_3e78493.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'SearchPage' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered search_pages/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 20.4ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:34:46 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/chou/.rvm/gems/ruby-2.1.3@rails3/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /home/chou/.rvm/gems/ruby-2.1.3@rails3/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (214.9ms)
+Completed 200 OK in 285.5ms (Views: 258.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-18 19:35:26 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4/QTkss1/hq672h2CfFLJZR96OLq4kV5mJyT10Cbl0=", "author"=>{"email"=>"aneeshde@seas.upenn.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@seas.upenn.edu' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-17 22:45:42.627711', "current_sign_in_at" = '2014-11-19 00:35:26.510683', "sign_in_count" = 4, "updated_at" = '2014-11-19 00:35:26.512357' WHERE "authors"."id" = 6[0m
+  [1m[35m (293.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 420.4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-18 19:35:27 -0500
+Served asset /rails.png - 304 Not Modified (58ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mPaper Load (0.1ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 6)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 6 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 84.4ms (Views: 78.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)

@@ -12,7 +12,21 @@ class SearchPagesController < ApplicationController
   # end
 
   def index
+ 
+    # @search_pages =SearchPage.search(params)
     @search_pages =SearchPage.search(params[:search])
+  
+    if params[:tag]
+      @search_pages = SearchPage.tagged_with(params[:tag])
+    # else
+    #   @search_pages = SearchPage.all
+    end
+    
+    respond_to do |format|
+       format.html # index.html.erb
+       format.json { render json: @search_pages }
+    end
+
   end
 
 

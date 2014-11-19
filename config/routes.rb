@@ -14,6 +14,12 @@ ResearchSharingProject::Application.routes.draw do
   get "page/questions"
   post "page/questions"
 
+
+
+  get 'tags/:tag', to: 'search_pages#index', as: :tag
+  resources :search_pages
+  root to: 'search_pages#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
