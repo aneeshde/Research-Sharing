@@ -12,12 +12,13 @@
 
 class Paper < ActiveRecord::Base
 
-  attr_accessible :author, :description, :title, :pdf, :author_id, :author_attributes
+  attr_accessible :author, :description, :title, :author_id, :author_attributes, :uploads_attributes
   validates :title, :author, :presence => true
   belongs_to :author
 
   has_many :user_faqs
-  accepts_nested_attributes_for :user_faqs
+  has_many :uploads
+  #accepts_nested_attributes_for :uploads, :allow_destroy => true
 
   # has_attached_file :pdf
                    # :url  => "/assets/products/:id/:style/:basename.:extension",

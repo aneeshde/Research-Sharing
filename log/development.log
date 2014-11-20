@@ -18666,3 +18666,987 @@ Served asset /userquestions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 19:35:37 -0500
 Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-18 21:19:05 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"research file", "description"=>"sample", "pdf"=>#<ActionDispatch::Http::UploadedFile:0x4632ac8 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[pdf]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141118-7188-7yu286>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 40.0ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: pdf):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-18 21:19:09 -0600
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 2)
+  Rendered papers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 85.1ms (Views: 53.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /papers.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /userquestions.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /papers.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /page.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:10 -0600
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-18 21:19:13 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1197.9ms)
+  Rendered papers/new.html.erb within layouts/application (1238.0ms)
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 1253.0ms (Views: 1252.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /application.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-18 21:19:15 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSearchPages (20141108022649)
+Migrating to CreatePapers (20141108160646)
+Migrating to DeviseCreateAuthors (20141108181015)
+Migrating to CreateUserFaqs (20141109225439)
+Migrating to ActsAsTaggableOnMigration (20141109231849)
+Migrating to AddMissingUniqueIndices (20141109231850)
+Migrating to AddTaggingsCounterCacheToTags (20141109231851)
+Migrating to AddMissingTaggableIndex (20141109231852)
+Migrating to AddAttachPaperclip (20141110011830)
+Migrating to AddNameToAuthor (20141110175354)
+Migrating to AddAuthorIdToPapers (20141117031117)
+Migrating to CreateUploads (20141119143637)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (63.3ms)[0m  CREATE TABLE "uploads" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "paper_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE INDEX "index_uploads_on_paper_id" ON "uploads" ("paper_id")[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20141119143637')
+  [1m[36m (146.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachmentPdfToUploads (20141119144415)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (3.0ms)[0m  [1mALTER TABLE "uploads" ADD "pdf_file_name" varchar(255)[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "uploads" ADD "pdf_content_type" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mALTER TABLE "uploads" ADD "pdf_file_size" integer[0m
+  [1m[35m (0.0ms)[0m  ALTER TABLE "uploads" ADD "pdf_updated_at" datetime
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20141119144415')[0m
+  [1m[35m (105.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  DROP TABLE "pdf"
+SQLite3::SQLException: no such table: pdf: DROP TABLE "pdf"
+Connecting to database specified by database.yml
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-19 08:55:09 -0600
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 2)
+  Rendered papers/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 309.5ms (Views: 157.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:09 -0600
+Served asset /application.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /page.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /papers.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /search_pages.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /userquestions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /page.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /papers.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /search_pages.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /userquestions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:10 -0600
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 08:55:12 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1578.2ms)
+  Rendered papers/new.html.erb within layouts/application (1598.2ms)
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 1644.3ms (Views: 1628.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 08:55:14 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 08:55:15 -0600
+Served asset /application.js - 304 Not Modified (3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 08:58:48 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1654.5ms)
+  Rendered papers/new.html.erb within layouts/application (1666.5ms)
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 1901.7ms (Views: 1838.7ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:50 -0600
+Served asset /application.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:50 -0600
+Served asset /page.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /papers.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /search_pages.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (45ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /userquestions.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (49ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /bootstrap.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /page.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /papers.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /search_pages.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (44ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /userquestions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:51 -0600
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 08:58:55 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (5.0ms)
+  Rendered papers/new.html.erb within layouts/application (9.0ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 76.0ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:56 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:57 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:57 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 08:58:57 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-19 08:58:59 -0600
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 2)
+  Rendered papers/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39.0ms (Views: 18.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:00 -0600
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:01 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:01 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:01 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (2.0ms)
+  Rendered papers/new.html.erb within layouts/application (3.0ms)
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 13.0ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:03 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:04 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:04 -0600
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:04 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:04 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 08:59:04 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (2.0ms)
+  Rendered papers/new.html.erb within layouts/application (4.0ms)
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 15.0ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 09:09:20 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 09:09:21 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (3.0ms)
+  Rendered papers/new.html.erb within layouts/application (6.0ms)
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 26.9ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:50 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 11:23:51 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-19 11:24:10 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"new", "description"=>"experiment", "document"=>#<ActionDispatch::Http::UploadedFile:0x52a7ab0 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[document]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141119-3772-1v2qqei>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 2.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: document):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-19 11:44:09 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"new", "description"=>"experiment", "document"=>#<ActionDispatch::Http::UploadedFile:0x5ca8238 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[document]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141119-3772-1xezsmu>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 6.0ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: document):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-19 11:44:14 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 2)[0m
+  Rendered papers/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60.0ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:14 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:14 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:14 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:15 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (4.0ms)
+  Rendered papers/new.html.erb within layouts/application (7.0ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 30.0ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-19 11:44:17 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 11:44:18 -0600
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-19 11:44:36 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"newpaper1", "description"=>"sample", "document"=>#<ActionDispatch::Http::UploadedFile:0x53f97a8 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[document]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141119-3772-1udfqpe>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 1.0ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: document):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-19 11:45:05 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"newpaper1", "description"=>"sample", "document"=>#<ActionDispatch::Http::UploadedFile:0x5cddb78 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[document]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141119-3772-u8jumk>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 7.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: document):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-19 11:45:27 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"newpaper1", "description"=>"sample", "document"=>#<ActionDispatch::Http::UploadedFile:0x5cd6420 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[document]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141119-3772-1eiuwgw>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 2.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: document):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (21.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.0ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-19 11:45:33 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"newpaper1", "description"=>"sample", "document"=>#<ActionDispatch::Http::UploadedFile:0x5413080 @original_filename="author page.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"paper[document]\"; filename=\"author page.pdf\"\r\nContent-Type: application/pdf\r\n", @tempfile=#<File:C:/Users/Mona/AppData/Local/Temp/RackMultipart20141119-3772-1ba5vib>>}, "commit"=>"Create Paper"}
+Completed 500 Internal Server Error in 1.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: document):
+  app/controllers/papers_controller.rb:43:in `new'
+  app/controllers/papers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.0ms)

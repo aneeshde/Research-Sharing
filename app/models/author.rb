@@ -34,5 +34,5 @@ class Author < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :papers
-  accepts_nested_attributes_for :papers
+  #accepts_nested_attributes_for :papers
 end
