@@ -43,7 +43,6 @@ class PapersController < ApplicationController
     @paper = Paper.new(params[:paper])
     @paper.author_id = current_author.id
 
-    @paper = Paper.create( params[:paper] )
     respond_to do |format|
       if @paper.save
         format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
