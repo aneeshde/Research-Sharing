@@ -22259,3 +22259,926 @@ ActionController::RoutingError (No route matches [GET] "/documents/original/miss
 
 
   Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.19/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "altered_papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_file_name" varchar(255), "document_content_type" varchar(255), "document_file_size" integer, "document_updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "papers"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_name","document_content_type","document_file_size","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_name","document_content_type","document_file_size","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_name","document_content_type","document_file_size","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_name","document_content_type","document_file_size","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_name","document_content_type","document_file_size","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_name","document_content_type","document_file_size","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "papers"
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_content_type" varchar(255), "document_file_size" integer, "document_updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_papers"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL, NULL, NULL)
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "altered_papers"[0m
+  [1m[35m (100.4ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  CREATE TEMPORARY TABLE "altered_papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_content_type" varchar(255), "document_file_size" integer, "document_updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "papers"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_content_type","document_file_size","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL, NULL, NULL)[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "papers"
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_file_size" integer, "document_updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  SELECT * FROM "altered_papers"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL, NULL)
+  [1m[36m (1.0ms)[0m  [1mDROP TABLE "altered_papers"[0m
+  [1m[35m (161.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "altered_papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_file_size" integer, "document_updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "papers"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL, NULL)[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_file_size","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL, NULL)[0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "papers"
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_papers"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL)
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL)
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE "altered_papers"[0m
+  [1m[35m (124.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TEMPORARY TABLE "altered_papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer, "document_updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "papers"[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2, NULL)
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "altered_papers" ("id","title","author","description","created_at","updated_at","author_id","document_updated_at") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL, NULL)[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "papers"
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "papers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "author_id" integer) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_papers"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id") VALUES (1, 'Research paper demo1', 'Demo author', 'Sample paper - No description', '2014-11-08 16:42:39.260615', '2014-11-08 16:42:39.260615', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id") VALUES (2, 'sample paper 2', 'demo author 1', 'Demo2', '2014-11-08 23:40:01.415228', '2014-11-08 23:40:01.415228', 6)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id") VALUES (4, 'Mutemath', NULL, 'Typical', '2014-11-17 22:55:56.620633', '2014-11-17 22:55:56.620633', 6)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id") VALUES (5, 'Mutemath', NULL, 'Typical', '2014-11-17 22:57:00.792794', '2014-11-17 22:57:00.792794', 6)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id") VALUES (6, 'newpaperdemo', NULL, 'demo!!!!', '2014-11-20 03:40:30.624000', '2014-11-20 03:40:30.624000', 2)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "papers" ("id","title","author","description","created_at","updated_at","author_id") VALUES (7, '3D printing', NULL, 'Coming soon! poster printing on canvas!!', '2014-11-20 03:48:41.670764', '2014-11-20 03:48:41.670764', NULL)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE "altered_papers"[0m
+  [1m[35m (114.1ms)[0m  commit transaction
+  [1m[36m (82.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141120034248'[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-20 15:20:14 -0600
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 2)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (85.4ms)
+Completed 200 OK in 459.7ms (Views: 287.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /page.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /papers.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /userquestions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:15 -0600
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /bootstrap.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /page.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /papers.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /search_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /userquestions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:16 -0600
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-20 15:20:19 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (1420.6ms)
+  Rendered papers/new.html.erb within layouts/application (1463.6ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 1476.6ms (Views: 1476.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:20 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:21 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/papers" for 127.0.0.1 at 2014-11-20 15:20:36 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs=", "paper"=>{"title"=>"3D printing", "description"=>"New in canvas!! coming soon!"}, "commit"=>"Create Paper"}
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "papers" ("author", "author_id", "created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["author", nil], ["author_id", nil], ["created_at", Thu, 20 Nov 2014 21:20:36 UTC +00:00], ["description", "New in canvas!! coming soon!"], ["title", "3D printing"], ["updated_at", Thu, 20 Nov 2014 21:20:36 UTC +00:00]]
+  [1m[35m (83.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/papers/8
+Completed 302 Found in 94.0ms (ActiveRecord: 90.0ms)
+
+
+Started GET "/papers/8" for 127.0.0.1 at 2014-11-20 15:20:36 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mUserFaq Load (0.0ms)[0m  SELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."paper_id" = 8
+  Rendered papers/show.html.erb within layouts/application (27.0ms)
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 38.0ms (Views: 36.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:36 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:36 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:37 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 2)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33.0ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:40 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:41 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:41 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:41 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:41 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:41 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-20 15:20:47 -0600
+Processing by PapersController#new as HTML
+  Rendered papers/_form.html.erb (19.0ms)
+  Rendered papers/new.html.erb within layouts/application (21.0ms)
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+Completed 200 OK in 31.0ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:47 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:47 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:47 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:47 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:47 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /userquestions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:48 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 2)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  Rendered papers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12.0ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /papers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:51 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:52 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:52 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers/6" for 127.0.0.1 at 2014-11-20 15:20:53 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPaper Load (1.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  [1m[36mUserFaq Load (0.0ms)[0m  [1mSELECT "user_faqs".* FROM "user_faqs" WHERE "user_faqs"."paper_id" = 6[0m
+  Rendered papers/show.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+Completed 200 OK in 12.0ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:53 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:54 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-20 15:20:56 -0600
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (1.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 2)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 15.0ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:56 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /userquestions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:20:57 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started DELETE "/authors/sign_out" for 127.0.0.1 at 2014-11-20 15:20:59 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j9BGzAEmdK0/KxP7CZpj4WvgAvpW9yS3TnZ5IIYVbEs="}
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 30.0ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-11-20 15:20:59 -0600
+Served asset /rails.png - 200 OK (4ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Processing by PapersController#index as HTML
+  Rendered papers/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 12.0ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /search_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:04 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /papers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:05 -0600
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 91.1ms (Views: 66.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /page.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:07 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:08 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-20 15:21:16 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lCp0wEsFphFWD1EHgzLLLpZ0NGgk8fdSdVdF21IBiE4=", "author"=>{"email"=>"aneeshde@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."email" = 'aneeshde@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "authors" SET "last_sign_in_at" = '2014-11-11 05:40:32.264512', "current_sign_in_at" = '2014-11-20 21:21:17.025537', "sign_in_count" = 14, "updated_at" = '2014-11-20 21:21:17.026520' WHERE "authors"."id" = 2[0m
+  [1m[35m (121.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 316.2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/papers" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Processing by PapersController#index as HTML
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE (author_id = 2)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 2 LIMIT 1[0m
+  Rendered papers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13.0ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/page.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /page.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /papers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/search_pages.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /search_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /user_fa_qs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.css?body=1" for 127.0.0.1 at 2014-11-20 15:21:23 -0600
+Served asset /userquestions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/page.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /page.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/papers.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /papers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/search_pages.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /search_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_fa_qs.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /user_fa_qs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/userquestions.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /userquestions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 15:21:24 -0600
+Served asset /application.js - 304 Not Modified (0ms)

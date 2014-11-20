@@ -12,7 +12,7 @@
 
 class Paper < ActiveRecord::Base
 
-  attr_accessible :author, :description, :title, :author_id, :author_attributes, :document
+  attr_accessible :author, :description, :title, :author_id, :author_attributes
   validates :title, :presence => true
   belongs_to :author
 
@@ -20,8 +20,8 @@ class Paper < ActiveRecord::Base
 
   #accepts_nested_attributes_for :uploads, :allow_destroy => true
 
-  has_attached_file :document,
-                   :url  => "/assets/upload/"
+  #has_attached_file :document,
+                   #:url  => "/assets/upload/"
                    # :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
   #validates_attachment_content_type :document
