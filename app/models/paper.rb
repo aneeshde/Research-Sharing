@@ -12,19 +12,19 @@
 
 class Paper < ActiveRecord::Base
 
-  attr_accessible :author, :description, :title, :author_id, :author_attributes, :uploads_attributes
-  validates :title, :author, :presence => true
+  attr_accessible :author, :description, :title, :author_id, :author_attributes, :document
+  validates :title, :presence => true
   belongs_to :author
 
   has_many :user_faqs
-  has_many :uploads
+
   #accepts_nested_attributes_for :uploads, :allow_destroy => true
 
-  # has_attached_file :pdf
-                   # :url  => "/assets/products/:id/:style/:basename.:extension",
+  has_attached_file :document,
+                   :url  => "/assets/upload/"
                    # :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
-  # validates_attachment_content_type :pdf,
+  #validates_attachment_content_type :document
   #                                   :content_type => ['application/pdf'],
   #                                   :message => "only pdf files are allowed"
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141119144415) do
+ActiveRecord::Schema.define(:version => 20141120034248) do
 
   create_table "authors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -40,9 +40,13 @@ ActiveRecord::Schema.define(:version => 20141119144415) do
     t.string   "title"
     t.string   "author"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.integer  "author_id"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "search_pages", :force => true do |t|
@@ -73,18 +77,6 @@ ActiveRecord::Schema.define(:version => 20141119144415) do
   end
 
   add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
-
-  create_table "uploads", :force => true do |t|
-    t.integer  "paper_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "pdf_file_name"
-    t.string   "pdf_content_type"
-    t.integer  "pdf_file_size"
-    t.datetime "pdf_updated_at"
-  end
-
-  add_index "uploads", ["paper_id"], :name => "index_uploads_on_paper_id"
 
   create_table "user_faqs", :force => true do |t|
     t.text     "Question"

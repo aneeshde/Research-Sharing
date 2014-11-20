@@ -21,9 +21,8 @@
       <br /><%= faq.Question %>
   <% end %>
 </p>
-
 <p>
-  <%= link_to 'My PDF', @paper.pdf.url %>
+  <%= link_to 'Uploaded Pdf', @paper.document.url %>
 </p>
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
