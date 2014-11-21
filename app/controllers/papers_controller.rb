@@ -2,8 +2,18 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
+    
+
     @papers = Paper.where("author_id = ?", current_author.id) if author_signed_in?
     # @papers=Paper.all
+    if params[:search]
+      @papers =Paper.search(params[:search])  
+    end
+
+    if params[:tag]
+      @papers = Paper.tagged_with(params[:tag])
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @papers }

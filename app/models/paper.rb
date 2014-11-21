@@ -12,12 +12,21 @@
 
 class Paper < ActiveRecord::Base
 
-  attr_accessible :author, :description, :title, :pdf, :author_id, :author_attributes
+  attr_accessible :author, :description, :title, :pdf, :author_id, :author_attributes,:tag_list
   validates :title, :author, :presence => true
   belongs_to :author
 
   has_many :user_faqs
   accepts_nested_attributes_for :user_faqs
+  acts_as_taggable
+
+  def self.search(search)
+      if search
+        Paper.where("description LIKE ? OR author LIKE ? OR title LIKE ?", "%#{search}%","%#{search}%", "%#{search}%") 
+      else
+        find(:all)
+      end
+  end
 
   # has_attached_file :pdf
                    # :url  => "/assets/products/:id/:style/:basename.:extension",

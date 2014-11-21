@@ -16,9 +16,9 @@ ResearchSharingProject::Application.routes.draw do
 
 
 
-  get 'tags/:tag', to: 'search_pages#index', as: :tag
-  resources :search_pages
-  root to: 'search_pages#index'
+  get 'tags/:tag', to: 'papers#index', as: :tag
+  resources :papers
+  root to: 'papers#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

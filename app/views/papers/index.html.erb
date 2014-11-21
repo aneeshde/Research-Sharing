@@ -6,6 +6,7 @@
     <th>Title</th>
     <th>Author</th>
     <th>Description</th>
+    <th>Tag</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= paper.title %></td>
     <td><%= paper.author %></td>
     <td><%= paper.description %></td>
+    <td><%= raw paper.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
     <td><%= link_to 'Show', paper %></td>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
     <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,6 +30,24 @@
 </table>
 
 <br />
+
+<div id="tag_cloud">
+  <% tag_cloud Paper.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+
+
+<!-- search field -->
+<%= form_tag papers_path, :method => 'get' do %>
+  <p>
+  <lbael>Type in title/ author/ description to search: </lbael><br/>
+    <%= text_field_tag :search, params[:search] %>
+    <br />
+    <%= submit_tag "Search", :author => nil%>
+  </p>
+<% end %>
+
 
 <%= link_to 'New Paper', new_paper_path %>
 
