@@ -12,7 +12,7 @@
 
 class Paper < ActiveRecord::Base
 
-  attr_accessible :author, :description, :title, :author_id, :author_attributes
+  attr_accessible :author, :description, :title, :author_id, :author_attributes,:tag_list
   validates :title, :presence => true
   belongs_to :author
 
