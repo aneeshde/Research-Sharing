@@ -12,12 +12,12 @@
 
 class Paper < ActiveRecord::Base
 
-  attr_accessible :author, :description, :title, :pdf, :author_id, :author_attributes,:tag_list
-  validates :title, :author, :presence => true
+  attr_accessible :author, :description, :title, :author_id, :author_attributes
+  validates :title, :presence => true
   belongs_to :author
 
   has_many :user_faqs
-  accepts_nested_attributes_for :user_faqs
+
   acts_as_taggable
 
   def self.search(search)
@@ -28,11 +28,13 @@ class Paper < ActiveRecord::Base
       end
   end
 
-  # has_attached_file :pdf
-                   # :url  => "/assets/products/:id/:style/:basename.:extension",
+  #accepts_nested_attributes_for :uploads, :allow_destroy => true
+
+  #has_attached_file :document,
+                   #:url  => "/assets/upload/"
                    # :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
-  # validates_attachment_content_type :pdf,
+  #validates_attachment_content_type :document
   #                                   :content_type => ['application/pdf'],
   #                                   :message => "only pdf files are allowed"
 

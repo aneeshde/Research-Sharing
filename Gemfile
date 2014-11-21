@@ -15,10 +15,11 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
-gem "therubyracer"
-gem "less-rails"
-gem "twitter-bootstrap-rails"
-gem "minitest"
+
+#gem "therubyracer"
+#gem "less-rails"
+#gem "twitter-bootstrap-rails"
+#gem "minitest"
 
 gem 'page-object'
 
