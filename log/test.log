@@ -1031,3 +1031,4 @@ Processing by UserFaqsController#new as HTML
   [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" 
 Completed 500 Internal Server Error in 56.0ms
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml

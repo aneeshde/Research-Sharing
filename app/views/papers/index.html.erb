@@ -18,7 +18,7 @@
   <tr>
 
     <td><%= paper.title %></td>
-    <td><%= paper.author %></td>
+    <td><%= paper.author.name %></td>
     <td><%= paper.description %></td>
     <td><%= raw paper.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
     <td><%= link_to 'Show', paper %></td>
