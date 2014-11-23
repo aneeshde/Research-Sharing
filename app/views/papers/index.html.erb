@@ -41,7 +41,7 @@
 <!-- search field -->
 <%= form_tag papers_path, :method => 'get' do %>
   <p>
-  <lbael>Type in title/ author/ description to search: </lbael><br/>
+  <lbael>Type in title to search: </lbael><br/>
     <%= text_field_tag :search, params[:search] %>
     <br />
     <%= submit_tag "Search", :author => nil%>

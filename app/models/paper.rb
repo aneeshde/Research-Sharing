@@ -22,7 +22,7 @@ class Paper < ActiveRecord::Base
 
   def self.search(search)
       if search
-        Paper.where("description LIKE ? OR author LIKE ? OR title LIKE ?", "%#{search}%","%#{search}%", "%#{search}%") 
+        Paper.where(" title LIKE ?", "%#{search}%")
       else
         find(:all)
       end
