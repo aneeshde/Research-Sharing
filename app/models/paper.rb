@@ -16,7 +16,7 @@ class Paper < ActiveRecord::Base
   validates :title, :presence => true
   belongs_to :author
 
-  has_many :user_faqs
+  has_many :faqs
 
   acts_as_taggable
 
