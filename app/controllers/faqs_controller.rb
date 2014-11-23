@@ -3,11 +3,12 @@ class FaqsController < ApplicationController
   respond_to :html, :xml, :json
 
   def index
-    @faqs = Faq.all
+    @faqs = Faq.where("paper_id = ?", params[:paper_id])
 
     if params[:tag]
       @faqs = Faq.tagged_with(params[:tag])
     end
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,6 +30,11 @@ class FaqsController < ApplicationController
 
   def create
     @faq = Faq.new(params[:faq])
+
+    @faq.type1 = 0
+    @faq.type1 = 1 if author_signed_in?
+
+    @faq.paper_id = params[:paper_id]
     @faq.save
     respond_with(@faq)
   end
