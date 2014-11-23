@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141120034248) do
+ActiveRecord::Schema.define(:version => 20141123171733) do
 
   create_table "authors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20141120034248) do
 
   create_table "papers", :force => true do |t|
     t.string   "title"
-    t.string   "author"
     t.text     "description"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
