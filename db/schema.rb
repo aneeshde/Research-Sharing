@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141123171733) do
+ActiveRecord::Schema.define(:version => 20141123220034) do
 
   create_table "authors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(:version => 20141123171733) do
 
   add_index "authors", ["email"], :name => "index_authors_on_email", :unique => true
   add_index "authors", ["reset_password_token"], :name => "index_authors_on_reset_password_token", :unique => true
+
+  create_table "faqs", :force => true do |t|
+    t.string   "question"
+    t.text     "answer"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "paper_id"
+    t.integer  "type1"
+  end
 
   create_table "papers", :force => true do |t|
     t.string   "title"
@@ -80,14 +89,5 @@ ActiveRecord::Schema.define(:version => 20141123171733) do
   end
 
   add_index "uploads", ["paper_id"], :name => "index_uploads_on_paper_id"
-
-  create_table "user_faqs", :force => true do |t|
-    t.text     "Question"
-    t.integer  "paper_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "user_faqs", ["paper_id"], :name => "index_user_faqs_on_paper_id"
 
 end
