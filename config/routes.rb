@@ -10,13 +10,13 @@ ResearchSharingProject::Application.routes.draw do
 
   resources :papers,:faqs
 
-  get 'tags/:tag', to: 'papers#index', as: :tag
-
+  # get 'tags/:tag', to: 'papers#index', as: :tag
+  match 'tags/:tag' => 'papers#index', as: :tag
   root to: 'papers#index'
 
-  get 'tags/:tag', to: 'faqs#index', as: :tag
+  # get 'tags/:tag', to: 'faqs#index', as: :tag
   # resources :faqs
-  root to: 'faqs#index'
+  # root to: 'faqs#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
