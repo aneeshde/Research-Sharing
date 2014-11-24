@@ -9,6 +9,8 @@ class PapersController < ApplicationController
       @papers =Paper.search(params[:search])  
     end
 
+    
+
     if params[:tag]
       @papers = Paper.tagged_with(params[:tag])
     end
