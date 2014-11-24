@@ -22,7 +22,6 @@ ResearchSharingProject::Application.routes.draw do
    resources :faqs
   root to: 'faqs#index'
 
-
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
