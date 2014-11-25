@@ -15,7 +15,11 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+<<<<<<< HEAD
 #  authorname             :string(255)
+=======
+#  name                   :string(255)
+>>>>>>> 0282334209e8206faf0ca4b6fcaed530f570e57a
 #
 
 class Author < ActiveRecord::Base

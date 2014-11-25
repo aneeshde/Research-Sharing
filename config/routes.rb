@@ -1,7 +1,7 @@
 ResearchSharingProject::Application.routes.draw do
 
   devise_for :authors
-  resources :papers
+  # resources :papers
 
   resources :papers do
     resources :faqs
@@ -12,13 +12,19 @@ ResearchSharingProject::Application.routes.draw do
   #post "page/questions"
 
   get 'tags/:tag', to: 'papers#index', as: :tag
-  resources :papers
-  root to: 'papers#index'
+    resources :papers
+  # root to: 'papers#index'
 
+<<<<<<< HEAD
   #get 'tags/:tag', to: 'faqs#index', as: :tag
   # resources :faqs
   #root to: 'faqs#index'
 
+=======
+  get 'tags/:tag', to: 'faqs#index', as: :tag
+   resources :faqs
+  # root to: 'faqs#index'
+>>>>>>> 0282334209e8206faf0ca4b6fcaed530f570e57a
 
   
   # The priority is based upon order of creation:
