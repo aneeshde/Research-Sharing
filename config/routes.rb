@@ -13,18 +13,12 @@ ResearchSharingProject::Application.routes.draw do
 
   get 'tags/:tag', to: 'papers#index', as: :tag
     resources :papers
-  # root to: 'papers#index'
+  root to: 'papers#index'
 
-<<<<<<< HEAD
-  #get 'tags/:tag', to: 'faqs#index', as: :tag
-  # resources :faqs
-  #root to: 'faqs#index'
 
-=======
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
   # root to: 'faqs#index'
->>>>>>> 0282334209e8206faf0ca4b6fcaed530f570e57a
 
   
   # The priority is based upon order of creation:

@@ -90,13 +90,4 @@ ActiveRecord::Schema.define(:version => 20141124091223) do
 
   add_index "uploads", ["paper_id"], :name => "index_uploads_on_paper_id"
 
-  create_table "user_faqs", :force => true do |t|
-    t.text     "Question"
-    t.integer  "paper_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "user_faqs", ["paper_id"], :name => "index_user_faqs_on_paper_id"
-
 end
