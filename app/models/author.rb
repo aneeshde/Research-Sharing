@@ -15,10 +15,6 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  attach_file_name       :string(255)
-#  attach_content_type    :string(255)
-#  attach_file_size       :integer
-#  attach_updated_at      :datetime
 #  name                   :string(255)
 #
 

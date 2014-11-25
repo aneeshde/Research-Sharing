@@ -2,25 +2,31 @@
 #
 # Table name: papers
 #
-#  id          :integer          not null, primary key
-#  title       :string(255)
-#  author      :string(255)
-#  description :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                    :integer          not null, primary key
+#  title                 :string(255)
+#  description           :text
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  attach_file_name      :string(255)
+#  attach_content_type   :string(255)
+#  attach_file_size      :integer
+#  attach_updated_at     :datetime
+#  author_id             :integer
+#  document_file_name    :string(255)
+#  document_content_type :string(255)
+#  document_file_size    :integer
+#  document_updated_at   :datetime
 #
 
 class Paper < ActiveRecord::Base
 
   attr_accessible :author, :description, :title, :author_id, :author_attributes,:tag_list
-  validates :title, :presence => true
+  # validates :title, :author_id, :description :presence => true
+  # validates :description, length: {minimum: 10}
   belongs_to :author
 
-<<<<<<< HEAD
-  has_many :faqs
-=======
+
   has_many :faqs, :inverse_of=>:paper
->>>>>>> 59109e13efef019c9915fe73f94aa9c425873f5f
 
   acts_as_taggable
 

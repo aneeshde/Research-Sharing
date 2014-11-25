@@ -22,7 +22,7 @@ class FaqsController < ApplicationController
 
   def new
     @faq = Faq.new
-    @test = params[:paper_id]
+    # @test = params[:paper_id]
     respond_with(@faq)
   end
 
