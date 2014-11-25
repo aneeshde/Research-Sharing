@@ -11,12 +11,10 @@ ResearchSharingProject::Application.routes.draw do
   #get "page/questions"
   #post "page/questions"
 
-
-
-
   get 'tags/:tag', to: 'papers#index', as: :tag
     resources :papers
-  # root to: 'papers#index'
+  root to: 'papers#index'
+
 
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
@@ -72,7 +70,7 @@ ResearchSharingProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'papers#index'
+  #root :to => 'papers#index'
 
   # See how all your routes lay out with "rake routes"
 

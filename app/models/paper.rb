@@ -25,7 +25,6 @@ class Paper < ActiveRecord::Base
   # validates :description, length: {minimum: 10}
   belongs_to :author
 
-
   has_many :faqs, :inverse_of=>:paper
 
   acts_as_taggable

@@ -15,6 +15,7 @@
 #
 #  Scenario: When successfully logged in
 #    Given I am on the research sharing website login page
+#    When there is an existing author
 #    When I enter valid email and password
 #    Then I should see the message "Signed in successfully."
 #

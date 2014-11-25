@@ -17,8 +17,6 @@ class PapersController < ApplicationController
 
     if params[:search]  
       @papers = search(params[:search])  
-    end
-
     
 
     if params[:tag]

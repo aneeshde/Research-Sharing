@@ -1,7 +1,7 @@
 <% if author_signed_in? %>
 <h1>Listing papers</h1>
 
-<table>
+<table id="index">
   <tr>
     <th>Title</th>
     <th>Author</th>
@@ -18,9 +18,9 @@
   <tr>
 
     <td><%= paper.title %></td>
-    <td><%= paper.author.name %></td>
+    <td><%= paper.author.authorname %></td>
     <td><%= paper.description %></td>
-    <td><%= raw paper.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
+    <td id="tag"><%= raw paper.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
     <td><%= link_to 'Show', paper %></td>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
     <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
