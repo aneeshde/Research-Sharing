@@ -11,6 +11,7 @@
 #    Given I am on the signup page
 #    When I enter valid email ID and password
 #    Then I should see the message "Welcome! You have signed up successfully."
+#    Then show me the page
 #
 #  Scenario: Password and Password confirmation mismatch
 #    Given I am on the signup page

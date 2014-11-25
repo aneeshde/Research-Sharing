@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (3.4.2)
       activerecord (>= 3.2, < 5)
+    addressable (2.3.6)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -68,6 +69,8 @@ GEM
       mime-types (>= 1.16, < 3)
       nokogiri (~> 1.5)
       rails (>= 3, < 5)
+    cucumber-rails-training-wheels (1.0.0)
+      cucumber-rails (>= 1.1.1)
     data_magic (0.20)
       faker (>= 1.1.2)
       yml_reader (>= 0.4)
@@ -97,6 +100,8 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -204,11 +209,14 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   annotate
+  capybara
   coffee-rails (~> 3.2.1)
   cucumber-rails
+  cucumber-rails-training-wheels
   database_cleaner
   devise
   jquery-rails
+  launchy
   page-object
   paperclip
   rails (= 3.2.19)

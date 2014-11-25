@@ -2,12 +2,20 @@
 #
 # Table name: papers
 #
-#  id          :integer          not null, primary key
-#  title       :string(255)
-#  author      :string(255)
-#  description :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                    :integer          not null, primary key
+#  title                 :string(255)
+#  description           :text
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  attach_file_name      :string(255)
+#  attach_content_type   :string(255)
+#  attach_file_size      :integer
+#  attach_updated_at     :datetime
+#  author_id             :integer
+#  document_file_name    :string(255)
+#  document_content_type :string(255)
+#  document_file_size    :integer
+#  document_updated_at   :datetime
 #
 
 class Paper < ActiveRecord::Base
@@ -16,7 +24,7 @@ class Paper < ActiveRecord::Base
   validates :title, :presence => true
   belongs_to :author
 
-  has_many :user_faqs, :inverse_of=>:paper
+  has_many :faqs
 
   acts_as_taggable
 

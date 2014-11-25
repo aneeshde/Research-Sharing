@@ -11,11 +11,15 @@ gem 'devise'
 gem 'rspec'
 gem 'paperclip'
 gem 'annotate'
-group :test do
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-end
 
+
+group :test, :development do
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+end
 #gem "therubyracer"
 #gem "less-rails"
 #gem "twitter-bootstrap-rails"

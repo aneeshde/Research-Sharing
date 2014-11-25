@@ -12,14 +12,17 @@ Given(/^I am on the signup page$/)do
 end
 
 When(/^I enter valid email ID and password$/) do
-  fill_in 'Email', :with => 'john.smith@apple.com'
+  fill_in 'Authorname', :with => 'aneeshde'
+  fill_in 'Email', :with => 'aneesh@gmail.com'
   fill_in 'Password', :with => 'qwerty123'
   fill_in 'Password confirmation', :with => 'qwerty123'
   click_button 'Sign up'
 end
 
 Then(/^I should see the message "Welcome! You have signed up successfully."$/) do
-  assert page.has_content?("Welcome! You have signed up successfully.");
+  #assert page.has_content?("Welcome! You have signed up successfully.");
+
+  page.should have_selector ".notice", text: "Welcome! You have signed up successfully."
 end
 
 When(/^I enter different passwords$/) do

@@ -1,24 +1,47 @@
-Given(/^I am on the search page$/) do
-  visit ("search_pages")
+Given(/^I am on the login page$/) do
+  visit eval("new_author_session_path")
 end
 
-When(/^I type in author in search bar$/) do
-  fill_in :search, :with => "Author"
+When(/^I login with valid credentials$/) do
+  @author = Author.new(:email => 'monica1291@gmail.com', :password => 'password', :password_confirmation => 'password')
+  @author.save
+  fill_in 'Login', :with => 'monica1291@gmail.com'
+  fill_in 'Password', :with => 'password'
+  click_button 'Log in'
+end
+
+When(/^I type in title in search box$/) do
+  fill_in :search, :with => "deccan"
   click_button 'Search'
 end
 
 Then(/^the page will show the results$/) do
- 	visit("http://localhost:3000/search_pages?utf8=%E2%9C%93&search=#{:with}&commit=Search")
-
+  page.should have_selector('table', :count => 1)
 end
 
-When(/^I click one of the search results$/) do
-  click_link('Author')
-  # For now (this iteration), instead of using the link of real paper, 
-  # I assume I have an exisiting link and click it.
+When(/^I create the paper1 with tags$/) do
+  #find_link('New Paper').click
+  click_link "New Paper"
+  fill_in 'Title', :with => 'Experiment1'
+  fill_in 'Description', :with => 'sample paper 1'
+  fill_in 'Tags (separated by commas)', :with => 'earth'
+  click_button 'Create Paper'
+  visit eval("papers_path")
 end
 
+When(/^I create the paper2 with tags$/) do
+  click_link "New Paper"
+  fill_in 'Title', :with => 'Experiment2'
+  fill_in 'Description', :with => 'This is a demo paper'
+  fill_in 'Tags (separated by commas)', :with => 'water'
+  click_button 'Create Paper'
+  visit eval("papers_path")
+end
 
-Then(/^it will navigate to the user page which shows the full content of that specific topic$/) do
-  visit("http://localhost:3000/search_pages?utf8=%E2%9C%93&search=#{:with}&commit=Search")
+When(/^I click on the tags link$/) do
+  click_link("earth", :match => :first)
+end
+
+Then(/^the page should display papers according to tags$/) do
+  page.should have_selector('table', :count => 1)
 end

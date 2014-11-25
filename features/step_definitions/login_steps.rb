@@ -4,17 +4,23 @@ end
 
 When(/^I attempt to login without (.*)$/) do |capture|
   fill_in 'Password', :with => 'Password' if /password/.match(capture)
-  fill_in 'Email', :with => 'john.smith@apple.com' if /email/.match(capture)
+  fill_in 'Login', :with => 'john.smith@apple.com' if /email/.match(capture)
   click_button 'Log in'
 end
 
+
 Then(/^I should see the error message "Invalid email or password"$/) do
-  assert page.has_content?("Invalid email or password.");
+  assert page.has_content?("Invalid login or password.");
 end
 
 
+When(/^there is an existing author$/) do
+  @author = Author.new(:email => 'aneesh@gmail.com', :password => 'password', :password_confirmation => 'password')
+  @author.save
+end
+
 When(/^I enter valid email and password$/) do
-  fill_in 'Email', :with => 'aneeshde@gmail.com'
+  fill_in 'Login', :with => 'aneesh@gmail.com'
   fill_in 'Password', :with => 'password'
   click_button 'Log in'
 end

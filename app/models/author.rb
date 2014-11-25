@@ -15,11 +15,7 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  attach_file_name       :string(255)
-#  attach_content_type    :string(255)
-#  attach_file_size       :integer
-#  attach_updated_at      :datetime
-#  name                   :string(255)
+#  authorname             :string(255)
 #
 
 class Author < ActiveRecord::Base
@@ -29,10 +25,20 @@ class Author < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  attr_accessor :login
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :authorname, :email, :password, :password_confirmation, :remember_me, :login
   # attr_accessible :title, :body
 
   has_many :papers
-  #accepts_nested_attributes_for :papers
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      #where(conditions).where(["lower(authorname) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+      where(conditions).where(["authorname = :value OR lower(email) = lower(:value)", { :value => login }]).first
+    else
+      where(conditions).first
+    end
+  end
 end
