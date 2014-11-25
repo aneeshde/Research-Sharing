@@ -5635,3 +5635,262 @@ Processing by PapersController#index as HTML
 Completed 200 OK in 16.5ms (Views: 7.3ms | ActiveRecord: 1.0ms)
   [1m[35m (0.2ms)[0m  rollback transaction
 >>>>>>> 00fcea7349ecb3586b2684792f8e9e540f874f34
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-24 22:59:42 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1662.2ms)
+Completed 200 OK in 1764.3ms (Views: 1687.2ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'monica1291@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authors" ("authorname", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["authorname", nil], ["created_at", Tue, 25 Nov 2014 04:59:44 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "monica1291@gmail.com"], ["encrypted_password", "$2a$04$7Y6N6YXjp9oZmWJ4lMaUl..Y8zaS/GnbLj3Yh9/o9Iw5L4ZEH08Cy"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 25 Nov 2014 04:59:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"login"=>"monica1291@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE (authorname = 'monica1291@gmail.com' OR lower(email) = lower('monica1291@gmail.com')) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  UPDATE "authors" SET "last_sign_in_at" = '2014-11-25 04:59:44.418849', "current_sign_in_at" = '2014-11-25 04:59:44.418849', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-25 04:59:44.419830' WHERE "authors"."id" = 1
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 45.0ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 1)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  Rendered papers/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 39.0ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by PapersController#new as HTML
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered papers/_form.html.erb (69.0ms)
+  Rendered papers/new.html.erb within layouts/application (107.4ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+Completed 200 OK in 121.4ms (Views: 109.4ms | ActiveRecord: 1.0ms)
+Started POST "/papers" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "paper"=>{"title"=>"Experiment1", "description"=>"sample paper 1", "tag_list"=>"earth"}, "commit"=>"Create Paper"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "papers" ("attach_content_type", "attach_file_name", "attach_file_size", "attach_updated_at", "author_id", "created_at", "description", "document_content_type", "document_file_name", "document_file_size", "document_updated_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["attach_content_type", nil], ["attach_file_name", nil], ["attach_file_size", nil], ["attach_updated_at", nil], ["author_id", 1], ["created_at", Tue, 25 Nov 2014 04:59:44 UTC +00:00], ["description", "sample paper 1"], ["document_content_type", nil], ["document_file_name", nil], ["document_file_size", nil], ["document_updated_at", nil], ["title", "Experiment1"], ["updated_at", Tue, 25 Nov 2014 04:59:44 UTC +00:00]]
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('earth'))[0m
+  [1m[35mActsAsTaggableOn::Tag Exists (0.0ms)[0m  SELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'earth' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name", "taggings_count") VALUES (?, ?)[0m  [["name", "earth"], ["taggings_count", 0]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND "taggings"."taggable_id" = 1 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 25 Nov 2014 04:59:44 UTC +00:00], ["tag_id", 1], ["taggable_id", 1], ["taggable_type", "Paper"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/papers/1
+Completed 302 Found in 141.1ms (ActiveRecord: 3.0ms)
+Started GET "/papers/1" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mFaq Load (0.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE "faqs"."paper_id" = 1
+  Rendered papers/show.html.erb within layouts/application (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 10.0ms (Views: 7.0ms | ActiveRecord: 2.0ms)
+Started GET "/papers" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (1.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered papers/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 40.0ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+Started GET "/papers/1" for 127.0.0.1 at 2014-11-24 22:59:44 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mFaq Load (0.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE "faqs"."paper_id" = 1
+  Rendered papers/show.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 5.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (32.9ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-24 23:08:28 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1599.9ms)
+Completed 200 OK in 1692.9ms (Views: 1622.9ms | ActiveRecord: 4.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'monica1291@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "authors" ("authorname", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["authorname", nil], ["created_at", Tue, 25 Nov 2014 05:08:29 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "monica1291@gmail.com"], ["encrypted_password", "$2a$04$vSeXFM4Ox4LQPqq/xvcUV.p2VVIMbol19cGPeGlVfCpoppsmVZ1Ai"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 25 Nov 2014 05:08:29 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-24 23:08:29 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"login"=>"monica1291@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE (authorname = 'monica1291@gmail.com' OR lower(email) = lower('monica1291@gmail.com')) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  UPDATE "authors" SET "last_sign_in_at" = '2014-11-25 05:08:29.931023', "current_sign_in_at" = '2014-11-25 05:08:29.931023', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-25 05:08:29.931023' WHERE "authors"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 41.0ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-24 23:08:29 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 1)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  Rendered papers/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 36.0ms (Views: 23.0ms | ActiveRecord: 1.0ms)
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#new as HTML
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered papers/_form.html.erb (71.1ms)
+  Rendered papers/new.html.erb within layouts/application (72.0ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+Completed 200 OK in 86.1ms (Views: 75.1ms | ActiveRecord: 1.0ms)
+Started POST "/papers" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "paper"=>{"title"=>"Experiment1", "description"=>"sample paper 1", "tag_list"=>"earth"}, "commit"=>"Create Paper"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "papers" ("attach_content_type", "attach_file_name", "attach_file_size", "attach_updated_at", "author_id", "created_at", "description", "document_content_type", "document_file_name", "document_file_size", "document_updated_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["attach_content_type", nil], ["attach_file_name", nil], ["attach_file_size", nil], ["attach_updated_at", nil], ["author_id", 1], ["created_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00], ["description", "sample paper 1"], ["document_content_type", nil], ["document_file_name", nil], ["document_file_size", nil], ["document_updated_at", nil], ["title", "Experiment1"], ["updated_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('earth'))[0m
+  [1m[35mActsAsTaggableOn::Tag Exists (0.0ms)[0m  SELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'earth' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name", "taggings_count") VALUES (?, ?)[0m  [["name", "earth"], ["taggings_count", 0]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND "taggings"."taggable_id" = 1 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00], ["tag_id", 1], ["taggable_id", 1], ["taggable_type", "Paper"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/papers/1
+Completed 302 Found in 129.1ms (ActiveRecord: 1.0ms)
+Started GET "/papers/1" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPaper Load (1.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mFaq Load (0.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE "faqs"."paper_id" = 1
+  Rendered papers/show.html.erb within layouts/application (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 9.0ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+Started GET "/papers" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered papers/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 35.0ms (Views: 33.0ms | ActiveRecord: 1.0ms)
+Started GET "/papers/1" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mFaq Load (1.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE "faqs"."paper_id" = 1
+  Rendered papers/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 4.0ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (4.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/authors/sign_in" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAuthor Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "authors" WHERE "authors"."email" = 'monica1291@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "authors" ("authorname", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["authorname", nil], ["created_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "monica1291@gmail.com"], ["encrypted_password", "$2a$04$ENY4DP9qwkASHupHTV1HfeTfyMmvJYGLqe9wsD.9vf/1lg6YOp6R2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/authors/sign_in" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "author"=>{"login"=>"monica1291@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE (authorname = 'monica1291@gmail.com' OR lower(email) = lower('monica1291@gmail.com')) LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  UPDATE "authors" SET "last_sign_in_at" = '2014-11-25 05:08:30.340422', "current_sign_in_at" = '2014-11-25 05:08:30.340422', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2014-11-25 05:08:30.341424' WHERE "authors"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7.0ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 1)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  Rendered papers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/papers/new" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#new as HTML
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered papers/_form.html.erb (4.0ms)
+  Rendered papers/new.html.erb within layouts/application (5.0ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+Completed 200 OK in 8.0ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+Started POST "/papers" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#create as HTML
+  Parameters: {"utf8"=>"✓", "paper"=>{"title"=>"Experiment1", "description"=>"sample paper 1", "tag_list"=>"earth"}, "commit"=>"Create Paper"}
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "papers" ("attach_content_type", "attach_file_name", "attach_file_size", "attach_updated_at", "author_id", "created_at", "description", "document_content_type", "document_file_name", "document_file_size", "document_updated_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["attach_content_type", nil], ["attach_file_name", nil], ["attach_file_size", nil], ["attach_updated_at", nil], ["author_id", 1], ["created_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00], ["description", "sample paper 1"], ["document_content_type", nil], ["document_file_name", nil], ["document_file_size", nil], ["document_updated_at", nil], ["title", "Experiment1"], ["updated_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (LOWER(name) = LOWER('earth'))[0m
+  [1m[35mActsAsTaggableOn::Tag Exists (0.0ms)[0m  SELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'earth' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name", "taggings_count") VALUES (?, ?)[0m  [["name", "earth"], ["taggings_count", 0]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND "taggings"."taggable_id" = 1 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 25 Nov 2014 05:08:30 UTC +00:00], ["tag_id", 1], ["taggable_id", 1], ["taggable_type", "Paper"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tags" SET "taggings_count" = COALESCE("taggings_count", 0) + 1 WHERE "tags"."id" = 1
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/papers/1
+Completed 302 Found in 13.0ms (ActiveRecord: 1.0ms)
+Started GET "/papers/1" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mFaq Load (0.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE "faqs"."paper_id" = 1
+  Rendered papers/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 5.0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started GET "/papers" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#index as HTML
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mPaper Load (0.0ms)[0m  [1mSELECT "papers".* FROM "papers" WHERE (author_id = 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Paper' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN papers ON papers.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Paper' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT papers.id FROM "papers" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered papers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 8.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+Started GET "/papers/1" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by PapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPaper Load (0.0ms)[0m  SELECT "papers".* FROM "papers" WHERE "papers"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mAuthor Load (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mFaq Load (0.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE "faqs"."paper_id" = 1
+  Rendered papers/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 4.0ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started GET "/papers/1/faqs" for 127.0.0.1 at 2014-11-24 23:08:30 -0600
+Processing by FaqsController#index as HTML
+  Parameters: {"paper_id"=>"1"}
+  [1m[35mFaq Load (0.0ms)[0m  SELECT "faqs".* FROM "faqs" WHERE (paper_id = '1')
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN faqs ON faqs.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Faq' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT faqs.id FROM "faqs" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id[0m
+  Rendered faqs/index.html.erb within layouts/application (4.0ms)
+  [1m[35mAuthor Load (0.0ms)[0m  SELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1
+Completed 200 OK in 8.0ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (6.0ms)[0m  [1mrollback transaction[0m

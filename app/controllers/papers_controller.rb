@@ -4,7 +4,7 @@ class PapersController < ApplicationController
 
   def search(search)
       if search
-        Paper.where(" title LIKE ?", search)
+        Paper.where(" title LIKE ?", "%#{search}%")
       else
         find(:all)
       end
@@ -17,7 +17,7 @@ class PapersController < ApplicationController
 
     if params[:search]  
       @papers = search(params[:search])  
-    
+    end
 
     if params[:tag]
       @papers = Paper.tagged_with(params[:tag])
