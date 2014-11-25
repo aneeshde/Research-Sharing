@@ -21,6 +21,7 @@ end
 
 When(/^I create the paper1 with tags$/) do
   #find_link('New Paper').click
+  visit eval("papers_path")
   click_link "New Paper"
   fill_in 'Title', :with => 'Experiment1'
   fill_in 'Description', :with => 'sample paper 1'

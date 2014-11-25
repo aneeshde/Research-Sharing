@@ -21,16 +21,13 @@
 class Paper < ActiveRecord::Base
 
   attr_accessible :author, :description, :title, :author_id, :author_attributes,:tag_list
-  # validates :title, :author_id, :description :presence => true
-  # validates :description, length: {minimum: 10}
+  validates :title, :presence => true
+  validates :description, :presence => true
+
   belongs_to :author
-
-
-
-
+  has_many :documents
 
   has_many :faqs, :inverse_of=>:paper
-
 
   acts_as_taggable
 

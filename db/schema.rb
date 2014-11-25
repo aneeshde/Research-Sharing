@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141124091223) do
+ActiveRecord::Schema.define(:version => 20141125063754) do
 
   create_table "authors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20141124091223) do
   add_index "authors", ["email"], :name => "index_authors_on_email", :unique => true
   add_index "authors", ["reset_password_token"], :name => "index_authors_on_reset_password_token", :unique => true
 
+  create_table "documents", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.integer  "paper_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "faqs", :force => true do |t|
     t.string   "question"
     t.text     "answer"
@@ -44,17 +52,13 @@ ActiveRecord::Schema.define(:version => 20141124091223) do
   create_table "papers", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "attach_file_name"
     t.string   "attach_content_type"
     t.integer  "attach_file_size"
     t.datetime "attach_updated_at"
     t.integer  "author_id"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
   end
 
   create_table "taggings", :force => true do |t|
@@ -76,18 +80,5 @@ ActiveRecord::Schema.define(:version => 20141124091223) do
   end
 
   add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
-
-  create_table "uploads", :force => true do |t|
-    t.integer  "paper_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
-    t.string   "document"
-  end
-
-  add_index "uploads", ["paper_id"], :name => "index_uploads_on_paper_id"
 
 end
