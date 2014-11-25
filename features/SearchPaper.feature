@@ -5,7 +5,7 @@ Feature: Search Paper
 
 	Scenario: search the paper by title
 		Given I am on the login page
-        When I login with valid credentials
+    When I login with valid credentials
 		When I type in title in search box
 		Then the page will show the results
 
