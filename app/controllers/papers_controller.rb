@@ -1,12 +1,22 @@
 class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
+
+  def search(search)
+      if search
+        Paper.where(" title LIKE ?", search)
+      else
+        find(:all)
+      end
+  end
+
   def index
     
 
-    @papers = Paper.where("author_id = ?", current_author.id) if author_signed_in?
-    if params[:search]
-      @papers =Paper.search(params[:search])  
+    @papers = Paper.where("author_id = ?", current_author.id) if (author_signed_in? && params[:search].blank?)
+
+    if params[:search]  
+      @papers = search(params[:search])  
     end
 
     

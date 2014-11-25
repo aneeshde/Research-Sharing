@@ -17,7 +17,7 @@ class FaqsController < ApplicationController
   end
 
   def show
-    respond_with(@faq)
+    respond_with(@paper,@faq)
   end
 
   def new

@@ -36,7 +36,7 @@
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
-
+<% end %>
 
 <!-- search field -->
 <%= form_tag papers_path, :method => 'get' do %>
@@ -48,11 +48,7 @@
   </p>
 <% end %>
 
-<%= @test %>
-<br/>
-
-
+<% if author_signed_in? %>
 <%= link_to 'New Paper', new_paper_path %>
-
     <% current_author %>
 <% end %>

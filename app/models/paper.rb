@@ -30,14 +30,6 @@ class Paper < ActiveRecord::Base
 
   acts_as_taggable
 
-  def self.search(search)
-      if search
-        Paper.where(" title LIKE ?", "%#{search}%")
-      else
-        find(:all)
-      end
-  end
-
   #accepts_nested_attributes_for :uploads, :allow_destroy => true
 
   #has_attached_file :document,
