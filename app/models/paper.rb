@@ -26,21 +26,13 @@ class Paper < ActiveRecord::Base
   belongs_to :author
 
 
-  has_many :faqs
+
 
 
   has_many :faqs, :inverse_of=>:paper
 
 
   acts_as_taggable
-
-  def self.search(search)
-      if search
-        Paper.where(" title LIKE ?", "%#{search}%")
-      else
-        find(:all)
-      end
-  end
 
   #accepts_nested_attributes_for :uploads, :allow_destroy => true
 

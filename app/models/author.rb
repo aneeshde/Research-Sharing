@@ -16,11 +16,12 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 
+
 #  authorname             :string(255)
 
 #  name                   :string(255)
 
-#
+
 
 class Author < ActiveRecord::Base
   # Include default devise modules. Others available are:
