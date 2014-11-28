@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <%= hidden_field_tag :paper_id , @faq.paper_id %>
   <div class="field">
     <%= f.label :question %><br />
     <%= f.text_field :question %>
@@ -19,11 +19,7 @@
     <% if !(current_author.blank?) %>
     <%= f.label :answer %><br />
     <%= f.text_area :answer %>
-  </div>
-  <div class="field">
-    <%= f.label :paper_id %><br />
-    <%= f.text_field :paper_id %>
-  </div>
+  </div
     <div class="field">
       <%= f.label :tag_list, "Enter Tags (Seperated by commas)" %><br />
       <%= f.text_field :tag_list %>

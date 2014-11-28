@@ -30,6 +30,7 @@ class FaqsController < ApplicationController
 
   def create
     @faq = Faq.new(params[:faq])
+    @faq.paper_id = params[:paper_id]
     #
     # @faq.type1 = 0
     # @faq.type1 = 1 if author_signed_in?
