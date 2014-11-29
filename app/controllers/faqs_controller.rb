@@ -22,8 +22,7 @@ class FaqsController < ApplicationController
 
   def new
     @faq = Faq.new
-    # @test = params[:paper_id]
-    respond_with(@faq)
+    @faq.paper_id = params[:paper_id]
   end
 
   def edit
@@ -31,13 +30,22 @@ class FaqsController < ApplicationController
 
   def create
     @faq = Faq.new(params[:faq])
+    @faq.paper_id = params[:paper_id]
     #
     # @faq.type1 = 0
     # @faq.type1 = 1 if author_signed_in?
-    @paper = Paper.find(params[:paper_id])
-    @faq.paper_id = params[:paper_id]
+# <<<<<<< HEAD
+#     @paper = Paper.find(params[:paper_id])
+#     @faq.paper_id = params[:paper_id]
+#     @faq.save
+#     respond_with(@paper.faq)
+# =======
+
+    # Pierre's version
     @faq.save
-    respond_with(@paper.faq)
+    @paper = Paper.find(@faq.paper_id)
+    respond_with(@paper, @faq)
+# >>>>>>> 55c3a8d0ddf0b1fa2ccd591fea043ea18c6b2b92
   end
 
   def update

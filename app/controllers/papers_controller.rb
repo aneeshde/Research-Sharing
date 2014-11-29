@@ -44,6 +44,8 @@ class PapersController < ApplicationController
   # GET /papers/new.json
   def new
     @paper = Paper.new
+    @document = @paper.documents.new
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -61,6 +63,7 @@ class PapersController < ApplicationController
   def create
     @paper = Paper.new(params[:paper])
     @paper.author_id = current_author.id
+    @document = @paper.documents.new(params[:document])
 
     respond_to do |format|
       if @paper.save
