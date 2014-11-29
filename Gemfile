@@ -6,7 +6,7 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'devise'
 gem 'rspec'
 gem 'paperclip'
@@ -19,6 +19,10 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+end
+
+group :production do
+   gem 'pg'
 end
 #gem "therubyracer"
 #gem "less-rails"
