@@ -15,10 +15,10 @@ ResearchSharingProject::Application.routes.draw do
     resources :papers
   root to: 'papers#index'
 
-
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
   # root to: 'faqs#index'
+
 
   
   # The priority is based upon order of creation:

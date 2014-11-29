@@ -1,16 +1,23 @@
 class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
+
+  def search(search)
+      if search
+        Paper.where(" title LIKE ?", "%#{search}%")
+      else
+        find(:all)
+      end
+  end
+
   def index
     
 
-    @papers = Paper.where("author_id = ?", current_author.id) if author_signed_in?
-    # @papers=Paper.all
-    if params[:search]
-      @papers =Paper.search(params[:search])  
-    end
+    @papers = Paper.where("author_id = ?", current_author.id) if (author_signed_in? && params[:search].blank?)
 
-    
+    if params[:search]  
+      @papers = search(params[:search])  
+    end
 
     if params[:tag]
       @papers = Paper.tagged_with(params[:tag])

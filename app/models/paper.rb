@@ -2,40 +2,31 @@
 #
 # Table name: papers
 #
-#  id                    :integer          not null, primary key
-#  title                 :string(255)
-#  description           :text
-#  created_at            :datetime         not null
-#  updated_at            :datetime         not null
-#  attach_file_name      :string(255)
-#  attach_content_type   :string(255)
-#  attach_file_size      :integer
-#  attach_updated_at     :datetime
-#  author_id             :integer
-#  document_file_name    :string(255)
-#  document_content_type :string(255)
-#  document_file_size    :integer
-#  document_updated_at   :datetime
+#  id                  :integer          not null, primary key
+#  title               :string(255)
+#  description         :text
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  attach_file_name    :string(255)
+#  attach_content_type :string(255)
+#  attach_file_size    :integer
+#  attach_updated_at   :datetime
+#  author_id           :integer
 #
 
 class Paper < ActiveRecord::Base
 
   attr_accessible :author, :description, :title, :author_id, :author_attributes,:tag_list
-  # validates :title, :author_id, :description :presence => true
-  # validates :description, length: {minimum: 10}
+  validates :title, :presence => true
+  validates :description, :presence => true
+  validates :author_id, :presence => true
+
   belongs_to :author
+  has_many :documents
 
   has_many :faqs, :inverse_of=>:paper
 
   acts_as_taggable
-
-  def self.search(search)
-      if search
-        Paper.where(" title LIKE ?", "%#{search}%")
-      else
-        find(:all)
-      end
-  end
 
   #accepts_nested_attributes_for :uploads, :allow_destroy => true
 

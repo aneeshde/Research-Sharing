@@ -15,13 +15,13 @@ end
 
 
 When(/^there is an existing author$/) do
-  @author = Author.new(:email => 'aneesh@gmail.com', :password => 'password', :password_confirmation => 'password')
+  @author = Author.new( :email => 'aneesh@gmail.com', :password => 'qwerty123', :password_confirmation => 'qwerty123')
   @author.save
 end
 
 When(/^I enter valid email and password$/) do
   fill_in 'Login', :with => 'aneesh@gmail.com'
-  fill_in 'Password', :with => 'password'
+  fill_in 'Password', :with => 'qwerty123'
   click_button 'Log in'
 end
 
