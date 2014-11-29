@@ -21,6 +21,12 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= fields_for @paper.documents.build do |f2| %>
+      <%= f2.file_field :asset %>
+    <% end %>
+  </div>
+
 <div class="field">
   <%= f.label :tag_list, "Tags (separated by commas)" %><br />
   <%= f.text_field :tag_list %>

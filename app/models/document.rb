@@ -13,4 +13,7 @@
 class Document < ActiveRecord::Base
   attr_accessible :name, :paper_id, :path
   belongs_to :paper
+  attr_accessible :asset
+  has_attached_file :asset
+  do_not_validate_attachment_file_type :asset
 end

@@ -2,10 +2,11 @@ ResearchSharingProject::Application.routes.draw do
 
   devise_for :authors
   # resources :papers
-
-  resources :papers do
-    resources :faqs
-  end
+root to: 'papers#index'
+resources :faqs
+resources :papers do
+  resources :faqs, :only => [:create, :index, :new]
+end
 
   get "page/login"
   #get "page/questions"
@@ -13,7 +14,6 @@ ResearchSharingProject::Application.routes.draw do
 
   get 'tags/:tag', to: 'papers#index', as: :tag
     resources :papers
-  root to: 'papers#index'
 
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
