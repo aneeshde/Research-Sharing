@@ -15,8 +15,9 @@ class PapersController < ApplicationController
 
     @papers = Paper.where("author_id = ?", current_author.id) if (author_signed_in? && params[:search].blank?)
 
-    if params[:search]  
-      @papers = search(params[:search])  
+    if params[:search]
+      @papers = search(params[:search])
+      puts @papers  
     end
 
     if params[:tag]
