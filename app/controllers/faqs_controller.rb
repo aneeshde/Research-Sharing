@@ -4,7 +4,7 @@ class FaqsController < ApplicationController
 
   def index
     @faqs = Faq.where("paper_id = ?", params[:paper_id])
-
+    @paper = Paper.find(params[:paper_id])
     if params[:tag]
       @faqs = Faq.tagged_with(params[:tag])
     end
@@ -23,6 +23,7 @@ class FaqsController < ApplicationController
   def new
     @faq = Faq.new
     @faq.paper_id = params[:paper_id]
+    @paper = Paper.find(params[:paper_id])
   end
 
   def edit
@@ -36,7 +37,7 @@ class FaqsController < ApplicationController
     # @faq.type1 = 1 if author_signed_in?
     @faq.save
     @paper = Paper.find(@faq.paper_id)
-    respond_with(@paper, @faq)
+    respond_with(@paper,@faq)
   end
 
   def update
@@ -46,7 +47,7 @@ class FaqsController < ApplicationController
 
   def destroy
     @faq.destroy
-    respond_with(@faq)
+    respond_with :index
   end
 
   private

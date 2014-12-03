@@ -5,7 +5,7 @@ ResearchSharingProject::Application.routes.draw do
 root to: 'papers#index'
 resources :faqs
 resources :papers do
-  resources :faqs, :only => [:create, :index, :new]
+  resources :faqs
 end
 
   get "page/login"
@@ -17,7 +17,6 @@ end
 
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
-  # root to: 'faqs#index'
 
 
   

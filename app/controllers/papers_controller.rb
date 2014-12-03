@@ -34,6 +34,15 @@ class PapersController < ApplicationController
   # GET /papers/1.json
   def show
     @paper = Paper.find(params[:id])
+    @document = Document.where(paper_id: @paper.id)
+
+    # puts "\n\n\ns<===========================INFORMATION===========================================>"
+    # puts @document.all
+    # File.open(@document.asset.path, "rb") do |io|
+    #   reader = PDF::Reader.new(io)
+      # puts "Page Count: #{reader.page_count}"
+    # end
+    # puts Dir.pwd
 
     respond_to do |format|
       format.html # show.html.erb
@@ -65,6 +74,15 @@ class PapersController < ApplicationController
     @paper = Paper.new(params[:paper])
     @paper.author_id = current_author.id
     @document = @paper.documents.new(params[:document])
+    puts "\n\n\ns<===========================INFORMATION===========================================>"
+    File.open("public/system/uploads/#{@document.id}/#{@document.asset_file_name}", "rb") do |io|
+      reader = PDF::Reader.new(io)
+      puts "Page Count: #{reader.page_count}"
+    end
+    
+    
+    # puts Dir.pwd
+
 
     respond_to do |format|
       if @paper.save

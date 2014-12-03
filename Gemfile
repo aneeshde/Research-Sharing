@@ -11,6 +11,7 @@ gem 'devise'
 gem 'rspec'
 gem 'paperclip'
 gem 'annotate'
+gem 'pdf-reader'
 
 
 group :test, :development do
