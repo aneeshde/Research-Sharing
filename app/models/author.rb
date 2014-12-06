@@ -31,6 +31,40 @@ class Author < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  #for facebook
+  devise :omniauthable, :omniauth_providers => [:facebook]
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |author|
+      author.email = auth.info.email 
+      author.password = Devise.friendly_token[0,20]
+      author.authorname = auth.info.name   # assuming the user model has a name
+      # author.image = auth.info.image # assuming the user model has an image
+    end
+  end
+
+    def facebook
+    # You need to implement the method below in your model (e.g. app/models/user.rb)
+    @author = Authors.from_omniauth(request.env["omniauth.auth"])
+
+    if @author.persisted?
+      sign_in_and_redirect @author, :event => :authentication #this will throw if @user is not activated
+      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+    else
+      session["devise.facebook_data"] = request.env["omniauth.auth"]
+      redirect_to new_author_registration_url
+    end
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |author|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        author.email = data["email"] if author.email.blank?
+      end
+    end
+  end
+
+
   attr_accessor :login
   # Setup accessible (or protected) attributes for your model
   attr_accessible :authorname, :email, :password, :password_confirmation, :remember_me, :login
