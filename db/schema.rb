@@ -11,7 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141202034919) do
+
+# ActiveRecord::Schema.define(:version => 20141202034919) do
+
+ActiveRecord::Schema.define(:version => 20141205174553) do
 
   create_table "authors", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -27,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20141202034919) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "authorname"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "authors", ["email"], :name => "index_authors_on_email", :unique => true
@@ -54,13 +59,17 @@ ActiveRecord::Schema.define(:version => 20141202034919) do
   create_table "papers", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "attach_file_name"
     t.string   "attach_content_type"
     t.integer  "attach_file_size"
     t.datetime "attach_updated_at"
     t.integer  "author_id"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "taggings", :force => true do |t|
@@ -82,5 +91,28 @@ ActiveRecord::Schema.define(:version => 20141202034919) do
   end
 
   add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
+
+  create_table "uploads", :force => true do |t|
+    t.integer  "paper_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.string   "document"
+  end
+
+  add_index "uploads", ["paper_id"], :name => "index_uploads_on_paper_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
 end
