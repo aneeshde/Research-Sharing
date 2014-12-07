@@ -74,11 +74,11 @@ class PapersController < ApplicationController
     @paper = Paper.new(params[:paper])
     @paper.author_id = current_author.id
     @document = @paper.documents.new(params[:document])
-    puts "\n\n\ns<===========================INFORMATION===========================================>"
-    File.open("public/system/uploads/#{@document.id}/#{@document.asset_file_name}", "rb") do |io|
-      reader = PDF::Reader.new(io)
-      puts "Page Count: #{reader.page_count}"
-    end
+    #puts "\n\n\ns<===========================INFORMATION===========================================>"
+    #File.open("public/system/uploads/#{@document.id}/#{@document.asset_file_name}", "rb") do |io|
+    #  reader = PDF::Reader.new(io)
+    #  puts "Page Count: #{reader.page_count}"
+    #end
     
     
     # puts Dir.pwd

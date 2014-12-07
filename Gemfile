@@ -11,8 +11,8 @@ gem 'devise'
 gem 'rspec'
 gem 'paperclip'
 gem 'annotate'
-gem 'pdf-reader'
-
+#gem 'pdf-reader'
+gem 'simplecov', :require => false, :group => :test
 
 group :test, :development do
   gem 'cucumber-rails', :require => false
@@ -26,7 +26,7 @@ end
 #gem "twitter-bootstrap-rails"
 #gem "minitest"
 
-gem 'page-object'
+#gem 'page-object'
 
 # Gems used only for assets and not required
 # in production environments by default.

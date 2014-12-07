@@ -34,9 +34,10 @@ class Author < ActiveRecord::Base
   attr_accessor :login
   # Setup accessible (or protected) attributes for your model
   attr_accessible :authorname, :email, :password, :password_confirmation, :remember_me, :login
-  # attr_accessible :title, :body
-  validates :authorname, :email, :password, :presence => true
-  validates :authorname,uniqueness: true
+  attr_accessible :title, :body
+  validates :email, :password, :presence => true
+  #validates :authorname, :presence => true
+  #validates :authorname,uniqueness: true
 
   has_many :papers
 
