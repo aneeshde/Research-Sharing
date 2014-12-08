@@ -18,8 +18,8 @@ class Paper < ActiveRecord::Base
 
   attr_accessible :author, :description, :title, :author_id, :author_attributes,:tag_list
   validates :title, :presence => true
-  validates :description, :presence => true
-  validates :author_id, :presence => true
+  #validates :description, :presence => true
+  #validates :author_id, :presence => true
 
   belongs_to :author
   has_many :documents, :dependent => :destroy

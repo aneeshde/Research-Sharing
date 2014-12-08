@@ -16,6 +16,6 @@ class Faq < ActiveRecord::Base
   acts_as_taggable
   belongs_to :paper
 
-  validates :question, :presence => true
+  #validates :question, :presence => true
   #validates_uniqueness_of :question, scope: [:paper_id]
 end
