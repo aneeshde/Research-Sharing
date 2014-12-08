@@ -12,7 +12,8 @@ gem 'rspec'
 gem 'paperclip'
 gem 'annotate'
 gem 'pdf-reader'
-
+gem 'pdfjs-rails-engine', github: "normancapule/pdfjs-rails-engine"
+gem 'simplecov', :require => false, :group => :test
 
 group :test, :development do
   gem 'cucumber-rails', :require => false
@@ -21,12 +22,24 @@ group :test, :development do
   gem 'capybara'
   gem 'launchy'
 end
+
+gem 'multipart-post'
+gem 'faraday'
+gem 'hashie'
+gem 'jwt'
+gem 'multi_xml'
+gem 'oauth2'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
+
+
 #gem "therubyracer"
 #gem "less-rails"
 #gem "twitter-bootstrap-rails"
 #gem "minitest"
 
-gem 'page-object'
+#gem 'page-object'
 
 # Gems used only for assets and not required
 # in production environments by default.

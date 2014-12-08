@@ -31,6 +31,15 @@ class Author < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  attr_accessor :login
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :authorname, :email, :password, :password_confirmation, :remember_me, :login
+  attr_accessible :title, :body
+  validates :email, :password, :presence => true
+  #validates :authorname, :presence => true
+  #validates :authorname,uniqueness: true
+  has_many :papers
+
   #for facebook
   devise :omniauthable, :omniauth_providers => [:facebook]
 
@@ -65,14 +74,9 @@ class Author < ActiveRecord::Base
   end
 
 
-  attr_accessor :login
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :authorname, :email, :password, :password_confirmation, :remember_me, :login
-  # attr_accessible :title, :body
-  validates :authorname, :email, :password, :presence => true
-  validates :authorname,uniqueness: true
 
-  has_many :papers
+
+
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

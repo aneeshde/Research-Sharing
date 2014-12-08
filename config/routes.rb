@@ -1,4 +1,5 @@
 ResearchSharingProject::Application.routes.draw do
+root to: 'papers#index'
 
   # devise_for :authors
 
@@ -9,8 +10,6 @@ ResearchSharingProject::Application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-
-  root to: 'papers#index'
   resources :faqs
   resources :papers do
     resources :faqs
@@ -31,7 +30,7 @@ ResearchSharingProject::Application.routes.draw do
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
 
-
+# mount PdfjsRailsEngine::Engine
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
