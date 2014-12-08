@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/normancapule/pdfjs-rails-engine.git
+  revision: ee20b5fe0d41439beb8cd3ff43dbc5a74f5fb62a
+  specs:
+    pdfjs-rails-engine (0.0.2)
+      rails (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -231,6 +238,7 @@ DEPENDENCIES
   page-object
   paperclip
   pdf-reader
+  pdfjs-rails-engine!
   rails (= 3.2.19)
   rspec
   sass-rails (~> 3.2.3)

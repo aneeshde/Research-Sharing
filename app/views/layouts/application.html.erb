@@ -30,6 +30,12 @@
   <% if flash[:notice] %>
       <p class="notice"><%= flash[:notice].html_safe %></p>
   <% end %>
+  <% if notice %>
+      <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if params && params[:notice] %>
+      <p class="notice"><%= params[:notice].html_safe %></p>
+  <% end %>
   <% if flash[:error] %>
       <p class="error"><%= flash[:error].html_safe %></p>
   <% end %>

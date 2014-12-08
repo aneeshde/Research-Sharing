@@ -22,9 +22,9 @@ class Paper < ActiveRecord::Base
   validates :author_id, :presence => true
 
   belongs_to :author
-  has_many :documents
+  has_many :documents, :dependent => :destroy
 
-  has_many :faqs, :inverse_of=>:paper
+  has_many :faqs, :inverse_of=>:paper, :dependent => :destroy
 
   acts_as_taggable
 

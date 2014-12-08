@@ -74,20 +74,20 @@ class PapersController < ApplicationController
     @paper = Paper.new(params[:paper])
     @paper.author_id = current_author.id
     @document = @paper.documents.new(params[:document])
-    puts "\n\n\ns<===========================INFORMATION===========================================>"
-    File.open("public/system/uploads/#{@document.id}/#{@document.asset_file_name}", "rb") do |io|
-      reader = PDF::Reader.new(io)
-      puts "Page Count: #{reader.page_count}"
-    end
-    
-    
-    # puts Dir.pwd
-
-
     respond_to do |format|
       if @paper.save
-        format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
-        format.json { render json: @paper, status: :created, location: @paper }
+        File.open("public/system/uploads/#{@document.id}/#{@document.asset_file_name}", "rb") do |io|
+          reader = PDF::Reader.new(io)
+          if reader.page_count > 10
+            @paper.destroy
+            @papers = Paper.where("author_id = ?", current_author.id)
+            format.html { redirect_to action: "index",  notice: 'Document cannot exceed 20 pages' }
+          else
+            format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
+            format.json { render json: @paper, status: :created, location: @paper }
+          end
+        end
+        
       else
         format.html { render action: "new" }
         format.json { render json: @paper.errors, status: :unprocessable_entity }

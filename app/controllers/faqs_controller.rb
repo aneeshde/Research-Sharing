@@ -27,6 +27,7 @@ class FaqsController < ApplicationController
   end
 
   def edit
+    @faq = Faq.find(params[:id])
   end
 
   def create
@@ -41,8 +42,10 @@ class FaqsController < ApplicationController
   end
 
   def update
+    @paper = Paper.find(params[:paper_id])
+    @faq = Faq.find(params[:id])
     @faq.update_attributes(params[:faq])
-    respond_with(@faq)
+    respond_with(@paper,@faq)
   end
 
   def destroy

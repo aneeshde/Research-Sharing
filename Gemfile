@@ -12,6 +12,7 @@ gem 'rspec'
 gem 'paperclip'
 gem 'annotate'
 gem 'pdf-reader'
+gem 'pdfjs-rails-engine', github: "normancapule/pdfjs-rails-engine"
 
 
 group :test, :development do

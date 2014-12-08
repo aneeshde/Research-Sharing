@@ -1,9 +1,7 @@
 ResearchSharingProject::Application.routes.draw do
 
-  devise_for :authors
-  # resources :papers
+devise_for :authors
 root to: 'papers#index'
-resources :faqs
 resources :papers do
   resources :faqs
 end
@@ -18,7 +16,7 @@ end
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
 
-
+# mount PdfjsRailsEngine::Engine
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
