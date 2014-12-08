@@ -1,12 +1,25 @@
 ResearchSharingProject::Application.routes.draw do
 
-  devise_for :authors
-  # resources :papers
-root to: 'papers#index'
-resources :faqs
-resources :papers do
+  # devise_for :authors
+
+  #for facebook
+  devise_for :authors, :controllers => { :omniauth_callbacks => "authors/omniauth_callbacks" }
+  
+  devise_scope :user do
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
+
+  root to: 'papers#index'
   resources :faqs
-end
+  resources :papers do
+    resources :faqs
+  end
+
+  
+  # resources :papers do
+    # resources :faqs, :only => [:create, :index, :new]
+  # end
 
   get "page/login"
   #get "page/questions"

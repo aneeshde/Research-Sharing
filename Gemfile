@@ -21,6 +21,18 @@ group :test, :development do
   gem 'capybara'
   gem 'launchy'
 end
+
+gem 'multipart-post'
+gem 'faraday'
+gem 'hashie'
+gem 'jwt'
+gem 'multi_xml'
+gem 'oauth2'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
+
+
 #gem "therubyracer"
 #gem "less-rails"
 #gem "twitter-bootstrap-rails"
@@ -41,6 +53,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'omniauth-facebook'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
