@@ -36,14 +36,8 @@ class FaqsController < ApplicationController
     #
     # @faq.type1 = 0
     # @faq.type1 = 1 if author_signed_in?
-# <<<<<<< HEAD
-#     @paper = Paper.find(params[:paper_id])
-#     @faq.paper_id = params[:paper_id]
-#     @faq.save
-#     respond_with(@paper.faq)
-# =======
 
-    # Pierre's version
+
     @faq.save
     @paper = Paper.find(@faq.paper_id)
 
