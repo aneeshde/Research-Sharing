@@ -16,6 +16,7 @@ gem 'pdfjs-rails-engine', github: "normancapule/pdfjs-rails-engine"
 gem 'simplecov', :require => false, :group => :test
 
 group :test, :development do
+  # gem 'sqlite3'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
@@ -23,6 +24,9 @@ group :test, :development do
   gem 'launchy'
 end
 
+group :production do
+  gem 'pg'
+end
 
 gem 'multipart-post'
 gem 'faraday'

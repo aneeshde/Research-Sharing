@@ -17,5 +17,5 @@ class Document < ActiveRecord::Base
   belongs_to :paper
   attr_accessible :asset, :path => ":rails_root/public/attachments/"
   has_attached_file :asset
-  #do_not_validate_attachment_file_type :asset
+  do_not_validate_attachment_file_type :asset
 end
