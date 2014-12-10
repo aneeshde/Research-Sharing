@@ -6,7 +6,7 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'devise'
 gem 'rspec'
 gem 'paperclip'
@@ -16,7 +16,7 @@ gem 'pdfjs-rails-engine', github: "normancapule/pdfjs-rails-engine"
 gem 'simplecov', :require => false, :group => :test
 
 group :test, :development do
-  # gem 'sqlite3'
+  gem 'sqlite3'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
