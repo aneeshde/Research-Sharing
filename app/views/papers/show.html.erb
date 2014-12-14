@@ -22,6 +22,8 @@
   <% end %>
 </p>
 
+<iframe src="/pdfjs/web/viewer.html?file=<%= @document.first.asset.url%>" style="border: 0" width="50%" height="600" frameborder="0" scrolling="no"></iframe>
+
 <%= link_to 'FAQ', paper_faqs_path(@paper,@faq) %>
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>

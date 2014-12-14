@@ -15,14 +15,9 @@ root to: 'papers#index'
     resources :faqs
   end
 
-  
-  # resources :papers do
-    # resources :faqs, :only => [:create, :index, :new]
-  # end
+  # mount PdfjsRailsEngine::Engine, at: '/papers'
 
   get "page/login"
-  #get "page/questions"
-  #post "page/questions"
 
   get 'tags/:tag', to: 'papers#index', as: :tag
     resources :papers
@@ -30,7 +25,6 @@ root to: 'papers#index'
   get 'tags/:tag', to: 'faqs#index', as: :tag
    resources :faqs
 
-# mount PdfjsRailsEngine::Engine
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -36,14 +36,6 @@ class PapersController < ApplicationController
     @paper = Paper.find(params[:id])
     @document = Document.where(paper_id: @paper.id)
 
-    # puts "\n\n\ns<===========================INFORMATION===========================================>"
-    # puts @document.all
-    # File.open(@document.asset.path, "rb") do |io|
-    #   reader = PDF::Reader.new(io)
-      # puts "Page Count: #{reader.page_count}"
-    # end
-    # puts Dir.pwd
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @paper }

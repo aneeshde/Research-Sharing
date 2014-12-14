@@ -23,7 +23,7 @@
   </div>
 </nav>
 
-<%= link_to "Sign in with Facebook", author_omniauth_authorize_path(:facebook) %>
+<%= link_to "Sign in with Facebook", author_omniauth_authorize_path(:facebook) unless author_signed_in? %>
 
 <section id="main">
 
