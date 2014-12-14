@@ -36,9 +36,13 @@ class FaqsController < ApplicationController
     #
     # @faq.type1 = 0
     # @faq.type1 = 1 if author_signed_in?
+
+
     @faq.save
     @paper = Paper.find(@faq.paper_id)
+
     respond_with(@paper,@faq)
+
   end
 
   def update

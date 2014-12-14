@@ -6,7 +6,7 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'devise'
 gem 'rspec'
 gem 'paperclip'
@@ -17,11 +17,16 @@ gem 'pdfjs_rails'
 gem 'simplecov', :require => false, :group => :test
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'multipart-post'
@@ -55,7 +60,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
