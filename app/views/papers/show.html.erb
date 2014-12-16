@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <table style = "border-style:solid; width:100%">
-  <tr style = "border-style:solid">
+  <tr>
     <td style = "border-style:solid; width:100%">
       <p>
         <b>Title:</b>
@@ -18,21 +18,17 @@
         <%= @paper.description %>
       </p>
 
-      <p>
-        <b>User FAQ's:</b>
-        <% @paper.faqs.each do |faq| %>
-            <br /><%= faq.question %>
-        <% end %>
-      </p>
       <iframe src="/pdfjs/web/viewer.html?file=<%= @document.first.asset.url%>" style="border: 0" width="50%" height="700" frameborder="0" scrolling="no"></iframe>
     </td>
 
-    <td style = "border-style:solid">
-      <% @faqs = @paper.faqs %>
-      <%= render partial: "faqs/index", :locals => {faqs:@faqs} %>
+    <td style = "border-style:solid" valign="top">
+      <div id="partial">
+        <% @faqs = @paper.faqs %>
+        <%= render partial: "faqs/index", :locals => {faqs:@faqs} %>
+      </div>
     </td>
-    <td>
-      <iframe name="faq_content" height="600px"></iframe>
+    <td style = "border-style:solid" valign="top">
+      <iframe name="faq_content" height="600px" frameborder="0" allowTransparency="true"></iframe>
     </td>
   </tr>
 </table>
