@@ -1,3 +1,12 @@
+<script>
+function refresh() {
+  alert("test1");
+  $(document).ready($('.partial').html("<% @faqs = @paper.faqs %><%= escape_javascript(render partial: 'faqs/index', :locals => {faqs:@faqs}) %>"));
+  //$('.partial').load('/faqs/reload');
+  alert("test2");
+}
+</script>
+
 <p id="notice"><%= notice %></p>
 
 <table style = "border-style:solid; width:100%">
@@ -22,7 +31,7 @@
     </td>
 
     <td style = "border-style:solid" valign="top">
-      <div id="partial">
+      <div class="partial">
         <% @faqs = @paper.faqs %>
         <%= render partial: "faqs/index", :locals => {faqs:@faqs} %>
       </div>
@@ -33,10 +42,6 @@
   </tr>
 </table>
 
-
 <%= link_to 'FAQ', paper_faqs_path(@paper,@faq) %>
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
-
-
-
