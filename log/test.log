@@ -30571,3 +30571,10 @@ Processing by PapersController#index as HTML
 Completed 200 OK in 9.1ms (Views: 6.8ms | ActiveRecord: 0.6ms)
   [1m[35m (0.2ms)[0m  rollback transaction
 >>>>>>> c70e9180b97e701f9fc0249f37c139f22f61878a
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

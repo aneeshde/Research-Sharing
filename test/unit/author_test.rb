@@ -17,12 +17,6 @@
 #  updated_at             :datetime         not null
 #  authorname             :string(255)
 #
-
-<<<<<<< HEAD
-#  authorname             :string(255)
-=======
-#  name                   :string(255)
->>>>>>> 0282334209e8206faf0ca4b6fcaed530f570e57a
 #
 
 require 'test_helper'
