@@ -48,8 +48,9 @@ class FaqsController < ApplicationController
   end
 
   def destroy
+    @paper = @faq.paper
     @faq.destroy
-    respond_with :index
+    respond_with @paper
   end
 
   private

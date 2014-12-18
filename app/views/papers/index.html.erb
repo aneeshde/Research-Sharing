@@ -22,8 +22,11 @@
     <td><%= paper.description %></td>
     <td id="tag"><%= raw paper.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
     <td><%= link_to 'Show', paper %></td>
+    <% if author_signed_in? %>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-    <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </td>
 
   </tr>
 <% end %>

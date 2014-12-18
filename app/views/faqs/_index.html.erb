@@ -17,8 +17,10 @@
     <td><%= faq.answer %></td>
     <td><%= raw faq.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></td>
     <td><%= link_to 'Show', paper_faq_path(@paper, faq.id), :target => "faq_content" %></td>
+    <% if author_signed_in? %>
     <td><%= link_to 'Edit', edit_paper_faq_path(@paper, faq.id), :target => "faq_content" %></td>
     <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
@@ -33,3 +35,4 @@
 
 
 <%= link_to 'New Faq', new_paper_faq_path(@paper), :target => "faq_content" %>
+</br>

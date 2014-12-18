@@ -1,9 +1,8 @@
 <script>
 function refresh() {
-  alert("test1");
-  $(document).ready($('.partial').html("<% @faqs = @paper.faqs %><%= escape_javascript(render partial: 'faqs/index', :locals => {faqs:@faqs}) %>"));
-  //$('.partial').load('/faqs/reload');
-  alert("test2");
+  alert("Test 1")
+  window.location.reload(true)
+  alert("Test 2")
 }
 </script>
 
@@ -27,13 +26,14 @@ function refresh() {
         <%= @paper.description %>
       </p>
 
-      <iframe src="/pdfjs/web/viewer.html?file=<%= @document.first.asset.url%>" style="border: 0" width="50%" height="700" frameborder="0" scrolling="no"></iframe>
+      <iframe src="/pdfjs/web/viewer.html?file=<%= @document.first.asset.url%>" style="border: 0" width="100%" height="700" frameborder="0" scrolling="no"></iframe>10
     </td>
 
     <td style = "border-style:solid" valign="top">
       <div class="partial">
         <% @faqs = @paper.faqs %>
-        <%= render partial: "faqs/index", :locals => {faqs:@faqs} %>
+        <% @doc=@document.first %>
+        <%= render partial: "faqs/index", :locals => {faqs:@faqs, doc:@doc} %>
       </div>
     </td>
     <td style = "border-style:solid" valign="top">
@@ -42,6 +42,5 @@ function refresh() {
   </tr>
 </table>
 
-<%= link_to 'FAQ', paper_faqs_path(@paper,@faq) %>
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
