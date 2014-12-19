@@ -1,32 +1,46 @@
+<script>
+function refresh() {
+  alert("Test 1")
+  window.location.reload(true)
+  alert("Test 2")
+}
+</script>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @paper.title %>
-</p>
+<table style = "border-style:solid; width:100%">
+  <tr>
+    <td style = "border-style:solid; width:100%">
+      <p>
+        <b>Title:</b>
+        <%= @paper.title %>
+      </p>
 
-<p>
-  <b>Author:</b>
-  <%= @paper.author.authorname %>
-</p>
+      <p>
+        <b>Author:</b>
+        <%= @paper.author.authorname %>
+      </p>
 
-<p>
-  <b>Description:</b>
-  <%= @paper.description %>
-</p>
+      <p>
+        <b>Description:</b>
+        <%= @paper.description %>
+      </p>
 
-<p>
-  <b>User FAQ's:</b>
-  <% @paper.faqs.each do |faq| %>
-      <br /><%= faq.question %>
-  <% end %>
-</p>
+      <iframe src="/pdfjs/web/viewer.html?file=<%= @document.first.asset.url%>" style="border: 0" width="100%" height="700" frameborder="0" scrolling="no"></iframe>10
+    </td>
 
-<iframe src="/pdfjs/web/viewer.html?file=<%= @document.first.asset.url%>" style="border: 0" width="50%" height="600" frameborder="0" scrolling="no"></iframe>
+    <td style = "border-style:solid" valign="top">
+      <div class="partial">
+        <% @faqs = @paper.faqs %>
+        <% @doc=@document.first %>
+        <%= render partial: "faqs/index", :locals => {faqs:@faqs, doc:@doc} %>
+      </div>
+    </td>
+    <td style = "border-style:solid" valign="top">
+      <iframe name="faq_content" height="600px" frameborder="0" allowTransparency="true"></iframe>
+    </td>
+  </tr>
+</table>
 
-<%= link_to 'FAQ', paper_faqs_path(@paper,@faq) %>
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
-
-
-
