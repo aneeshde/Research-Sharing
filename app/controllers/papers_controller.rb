@@ -73,7 +73,7 @@ class PapersController < ApplicationController
           if reader.page_count > 10
             @paper.destroy
             @papers = Paper.where("author_id = ?", current_author.id)
-            format.html { redirect_to action: "index",  notice: 'Document cannot exceed 20 pages' }
+            format.html { redirect_to action: "index",  notice: 'Document cannot exceed 10 pages' }
           else
             format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
             format.json { render json: @paper, status: :created, location: @paper }
@@ -81,6 +81,8 @@ class PapersController < ApplicationController
         end
         
       else
+        #format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
+        #format.json { render json: @paper, status: :created, location: @paper }
         format.html { render action: "new" }
         format.json { render json: @paper.errors, status: :unprocessable_entity }
       end

@@ -11,7 +11,6 @@ end
 
 When(/^I type in FAQ$/) do
   click_link("Show", :match => :first)
-  click_link("FAQ", :match => :first)
   click_link("New Faq", :match => :first)
   fill_in :faq_question, :with => "New question"
   click_button 'Create Faq'

@@ -4,10 +4,14 @@ When(/^I click on the create paper button and fill in the details and submit$/) 
   fill_in 'Title', :with => 'Experiment1'
   fill_in 'Description', :with => 'sample paper 1'
   fill_in 'Tags (separated by commas)', :with => 'earth'
+  path = "#{Rails.root}/features/upload files/Part1.pdf"
+  attach_file 'document_asset', path
   click_button 'Create Paper'
+  #visit_eval(papers_path)
 end
 
 Then(/^I should see the papers listing page with the created paper$/) do
+  #visit eval("papers_path")
   assert page.has_content?("Paper was successfully created.");
 end
 
@@ -18,12 +22,15 @@ end
 
 When(/^I edit and submit$/) do
   fill_in 'Title', :with => 'Experiment123'
+  path = "#{Rails.root}/features/upload files/Part1.pdf"
+  attach_file 'document_asset', path
   click_button 'Update Paper'
+  
 end
 
 
 Then(/^I should see the updated message$/) do
-  assert page.has_content?("Paper was successfully updated");
+  assert page.has_content?("Paper was successfully updated.");
 end
 
 When(/^I click on the destroy link$/) do

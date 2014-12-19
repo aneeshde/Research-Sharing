@@ -1,17 +1,9 @@
 Then(/^I should see the FAQ link$/) do
-  page.should have_selector(:link_or_button, 'FAQ')
+  page.should have_selector(:link_or_button, 'New Faq')
 end
 
 When(/^I click on the show link$/) do
   click_link("Show", :match => :first)
-end
-
-Then(/^I should see the faq index page$/) do
-  page.should have_selector(:link_or_button, 'New Faq')
-end
-
-When(/^I click on the FAQ link$/) do
-  click_link "FAQ"
 end
 
 
@@ -29,6 +21,8 @@ end
 
 
 When(/^I click on edit button$/) do
+  visit eval('papers_path')
+  click_link("Show", :match => :first)
   click_link("Edit", :match => :first)
 end
 
@@ -36,6 +30,12 @@ When(/^I modify and click update$/) do
   fill_in :faq_question, :with => "New question123"
   click_button 'Update Faq'
 end
+
+When(/^I click on the link show and proceed$/)do
+    visit eval('papers_path')
+  click_link("Show", :match => :first)
+end
+
 
 Then(/^I should see the updated content$/) do
   assert page.has_content?("New question123");

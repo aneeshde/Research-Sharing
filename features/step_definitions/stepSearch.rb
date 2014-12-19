@@ -26,6 +26,8 @@ When(/^I create the paper1 with tags$/) do
   fill_in 'Title', :with => 'Experiment1'
   fill_in 'Description', :with => 'sample paper 1'
   fill_in 'Tags (separated by commas)', :with => 'earth'
+  path = "#{Rails.root}/features/upload files/Part1.pdf"
+  attach_file 'document_asset', path
   click_button 'Create Paper'
   visit eval("papers_path")
 end
@@ -35,6 +37,8 @@ When(/^I create the paper2 with tags$/) do
   fill_in 'Title', :with => 'Experiment2'
   fill_in 'Description', :with => 'This is a demo paper'
   fill_in 'Tags (separated by commas)', :with => 'water'
+    path = "#{Rails.root}/features/upload files/Part1.pdf"
+  attach_file 'document_asset', path
   click_button 'Create Paper'
   visit eval("papers_path")
 end
